@@ -17,7 +17,7 @@ import java.util.List;
 public class OfferController {
 
     // Controller -> Service -> Dao
-    @Autowired
+    @Autowired //자동으로 연결시켜준다는 의미, 의존성 주입을 해주세요 라는 의미
     private OfferService offerService;
 
     @GetMapping("/offers")

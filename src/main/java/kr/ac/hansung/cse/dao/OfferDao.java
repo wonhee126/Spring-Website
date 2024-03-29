@@ -27,7 +27,7 @@ public class OfferDao {
 
     }
     //query and return a single object
-    public Offer getOffer(String name) {
+    public Offer getOffer(String name) { //조회(R) -> 하나
 
         String sqlStatement= "select * from offers where name=?";
         return jdbcTemplate.queryForObject(sqlStatement, new Object[] {name},
@@ -49,8 +49,8 @@ public class OfferDao {
     }
 
     //query and return multiple objects
-    // cRud method
-    public List<Offer> getOffers() {
+    // cRud method -> 생성, 조회, 수정, 삭제
+    public List<Offer> getOffers() { //조회(R) -> all
 
         String sqlStatement= "select * from offers";
         return jdbcTemplate.query(sqlStatement, new RowMapper<Offer>() {
@@ -72,7 +72,7 @@ public class OfferDao {
 
 
     // Crud method
-    public boolean insert(Offer offer) {
+    public boolean insert(Offer offer) { //생성(C)
 
         String name= offer.getName();
         String email= offer.getEmail();
@@ -84,7 +84,7 @@ public class OfferDao {
     }
 
     // crUd method
-    public boolean update(Offer offer) {
+    public boolean update(Offer offer) { //수정(U)
 
         int id = offer.getId();
         String name= offer.getName();
@@ -97,7 +97,7 @@ public class OfferDao {
     }
 
     //cruD method
-    public boolean delete(int id) {
+    public boolean delete(int id) { //삭제(D)
         String sqlStatement= "delete from offers where id=?";
         return (jdbcTemplate.update(sqlStatement, new Object[] {id}) == 1);
     }
