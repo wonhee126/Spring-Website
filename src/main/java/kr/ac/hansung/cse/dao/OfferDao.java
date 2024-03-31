@@ -62,7 +62,7 @@ public class OfferDao {
 
                 Offer offer= new Offer();
 
-                //offer.setId(rs.getInt("id"));
+                offer.setId(rs.getInt("id"));
                 offer.setUsername(rs.getString("username"));
                 offer.setEmail(rs.getString("email"));
                 offer.setPassword(rs.getString("password"));
@@ -88,14 +88,14 @@ public class OfferDao {
     // crUd method
     public boolean update(Offer offer) { //수정(U)
 
-        //int id = offer.getId();
+        int id = offer.getId();
         String username= offer.getUsername();
         String email= offer.getEmail();
         String password = offer.getPassword();
 
-        String sqlStatement= "update offers set username=?, email=?, password=? where username=?";
+        String sqlStatement= "update offers set username=?, email=?, password=? where id=?";
 
-        return (jdbcTemplate.update(sqlStatement, new Object[] {username, email, password, username}) == 1);
+        return (jdbcTemplate.update(sqlStatement, new Object[] {username, email, password, id}) == 1);
     }
 
     //cruD method

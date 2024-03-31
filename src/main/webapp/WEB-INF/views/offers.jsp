@@ -8,6 +8,7 @@
 <table border="1">
     <thead>
     <tr>
+        <th>id</th>
         <th>Username</th>
         <th>Email</th>
         <th>Password</th>
@@ -16,6 +17,7 @@
     <tbody>
     <c:forEach var="offer" items="${id_offers}" >
         <tr>
+            <td><c:out value="${offer.id}" /></td>
             <td><c:out value="${offer.username}" /></td>
             <td><c:out value="${offer.email}" /></td>
             <td><c:out value="${offer.password}" /></td>
