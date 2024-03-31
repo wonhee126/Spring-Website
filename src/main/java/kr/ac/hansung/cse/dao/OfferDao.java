@@ -29,74 +29,76 @@ public class OfferDao {
 
 
     //query and return a single object
-//    public Offer getOffer(String name) { //조회(R) -> 하나
-//
-//        String sqlStatement= "select * from offers where name=?";
-//        return jdbcTemplate.queryForObject(sqlStatement, new Object[] {name},
-//                new RowMapper<Offer>() {
-//
-//                    @Override
-//                    public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
-//
-//                        Offer offer= new Offer();
-//
-//                        offer.setId(rs.getInt("id"));
-//                        offer.setName(rs.getString("name"));
-//                        offer.setEmail(rs.getString("email"));
-//                        offer.setText(rs.getString("text"));
-//
-//                        return offer;
-//                    }
-//                });
-//    }
+    public List<Offer> getOffer(int userId) { // 특정 사용자의 코스 조회
+        String sqlStatement = "SELECT * FROM infoSystem.Courses WHERE user_id = 1";
+        List<Offer> offers = jdbcTemplate.query(sqlStatement,
+                new RowMapper<Offer>() {
+                    @Override
+                    public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Offer offer = new Offer();
+                        offer.setUser_id(rs.getInt("user_id"));
+                        offer.setYear(rs.getInt("수강년도"));
+                        offer.setSemester(rs.getInt("학기"));
+                        offer.setCourseCode(rs.getString("교과코드"));
+                        offer.setCourseName(rs.getString("교과목명"));
+                        offer.setCourseType(rs.getString("교과구분"));
+                        offer.setProfessor(rs.getString("담당교수"));
+                        offer.setCredit(rs.getInt("학점"));
+                        return offer;
+                    }
+                });
+        return offers;
+    }
+
+
 
     //query and return multiple objects
     // cRud method -> 생성, 조회, 수정, 삭제
-    public List<Offer> getOffers() { //조회(R) -> all
-
-        String sqlStatement= "select * from infoSystem.Users;";
-        return jdbcTemplate.query(sqlStatement, new RowMapper<Offer>() {
-
-            @Override
-            public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
-
-                Offer offer= new Offer();
-
-                offer.setId(rs.getInt("id"));
-                offer.setUsername(rs.getString("username"));
-                offer.setEmail(rs.getString("email"));
-                offer.setPassword(rs.getString("password"));
-
-                return offer;
-            }
-        });
-    }
+//    public List<Offer> getOffers() { //조회(R) -> all
+//
+//        String sqlStatement= "select * from infoSystem.Users;";
+//        return jdbcTemplate.query(sqlStatement, new RowMapper<Offer>() {
+//
+//            @Override
+//            public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
+//
+//                Offer offer= new Offer();
+//
+//                //offer.setId(rs.getInt("id"));
+//                offer.setUsername(rs.getString("username"));
+//                offer.setEmail(rs.getString("email"));
+//                offer.setPassword(rs.getString("password"));
+//
+//                return offer;
+//            }
+//        });
+//    }
 
 
     // Crud method
-    public boolean insert(Offer offer) { //생성(C) -> Users 테이블로 수정 완료
-
-        String username= offer.getUsername();
-        String email= offer.getEmail();
-        String password = offer.getPassword();
-
-        String sqlStatement= "insert into infoSystem.Users (username, email, password) VALUES values (?,?,?)";
-
-        return (jdbcTemplate.update(sqlStatement, new Object[] {username, email, password}) == 1);
-    }
+//    public boolean insert(Offer offer) { //생성(C) -> Users 테이블로 수정 완료
+//
+//        String username= offer.getUsername();
+//        String email= offer.getEmail();
+//        String password = offer.getPassword();
+//
+//        String sqlStatement= "insert into infoSystem.Users (username, email, password) VALUES values (?,?,?)";
+//
+//        return (jdbcTemplate.update(sqlStatement, new Object[] {username, email, password}) == 1);
+//    }
 
     // crUd method
-    public boolean update(Offer offer) { //수정(U)
-
-        int id = offer.getId();
-        String username= offer.getUsername();
-        String email= offer.getEmail();
-        String password = offer.getPassword();
-
-        String sqlStatement= "update offers set username=?, email=?, password=? where id=?";
-
-        return (jdbcTemplate.update(sqlStatement, new Object[] {username, email, password, id}) == 1);
-    }
+//    public boolean update(Offer offer) { //수정(U)
+//
+//        int id = offer.getId();
+//        String username= offer.getUsername();
+//        String email= offer.getEmail();
+//        String password = offer.getPassword();
+//
+//        String sqlStatement= "update offers set username=?, email=?, password=? where id=?";
+//
+//        return (jdbcTemplate.update(sqlStatement, new Object[] {username, email, password, id}) == 1);
+//    }
 
     //cruD method
     public boolean delete(int id) { //삭제(D)

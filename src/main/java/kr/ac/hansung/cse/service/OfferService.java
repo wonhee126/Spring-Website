@@ -14,11 +14,15 @@ public class OfferService {
     @Autowired
     private OfferDao offerDao;
 
-    public List<Offer> getAllOffers() {
-        return offerDao.getOffers();
+//    public List<Offer> getAllOffers() {
+//        return offerDao.getOffers();
+//    }
+
+    public List<Offer> getOffers(int id){
+        return offerDao.getOffer(id);
     }
 
-    public void insert(Offer offer) {
-        offerDao.insert(offer);
-    }
+//    public void insert(Offer offer) {
+//        offerDao.insert(offer);
+//    }
 }
