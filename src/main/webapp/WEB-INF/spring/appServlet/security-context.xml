@@ -5,12 +5,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
 
     <security:authentication-manager>
-<!--        <security:authentication-provider>-->
-<!--            <security:user-service>-->
-<!--                <security:user name="nykim" authorities="ROLE_USER" password="{noop}letmein"/>-->
-<!--                <security:user name="alice" authorities="ROLE_USER" password="{noop}letmein"/>-->
-<!--            </security:user-service>-->
-<!--        </security:authentication-provider>-->
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="nykim" authorities="ROLE_USER" password="{noop}letmein"/>
+                <security:user name="alice" authorities="ROLE_USER" password="{noop}letmein"/>
+            </security:user-service>
+        </security:authentication-provider>
         <security:authentication-provider>
             <security:jdbc-user-service data-source-ref="dataSource"
                    users-by-username-query="select username, password, enabled from users where username=?"

@@ -10,11 +10,12 @@
 
 <html>
   <head>
-    <title>$Title$</title>
+    <title>학사 정보 시스템</title>
   </head>
   <body>
-    <p> <a href="${pageContext.request.contextPath}/offers"> Show current offers</a></p>
-    <p> <a href="${pageContext.request.contextPath}/createoffer"> Add a new offer</a></p>
+    <p> <a href="${pageContext.request.contextPath}/createoffer"> 수강신청 하기 </a></p>
+    <p> <a href="${pageContext.request.contextPath}/createoffer"> 수강신청 조회 </a></p>
+    <p> <a href="${pageContext.request.contextPath}/offers"> 학년별 이수 학점 조회 </a></p>
 
     <c:if test="${pageContext.request.userPrincipal.name != null}">
       <a href="javascript:document.getElementById('logout').submit()">Logout</a>
