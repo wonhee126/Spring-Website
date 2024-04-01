@@ -38,25 +38,25 @@ public class OfferController {
         return "createoffer";
     }
 
-//    @PostMapping("/docreate")
-//    public String doCreate(Model model, @Valid Offer offer, BindingResult result) {
-//
-//        // System.out.println(offer);
-//        if(result.hasErrors()) {
-//            System.out.println("== Form data does not validated ==");
-//
-//            List<ObjectError> errors = result.getAllErrors();
-//
-//            for(ObjectError error:errors) {
-//                System.out.println(error.getDefaultMessage());
-//            }
-//
-//            return "createoffer";
-//        }
-//
-//        // Controller -> Service -> Dao
-//        offerService.insert(offer);
-//
-//        return "offercreated";
-//    }
+    @PostMapping("/docreate")
+    public String doCreate(Model model, @Valid Offer offer, BindingResult result) {
+
+        // System.out.println(offer);
+        if(result.hasErrors()) {
+            System.out.println("== Form data does not validated ==");
+
+            List<ObjectError> errors = result.getAllErrors();
+
+            for(ObjectError error:errors) {
+                System.out.println(error.getDefaultMessage());
+            }
+
+            return "createoffer";
+        }
+
+        // Controller -> Service -> Dao
+        offerService.insert(offer);
+
+        return "offercreated";
+    }
 }

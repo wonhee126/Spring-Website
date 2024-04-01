@@ -76,16 +76,16 @@ public class OfferDao {
 
 
     // Crud method
-//    public boolean insert(Offer offer) { //생성(C) -> Users 테이블로 수정 완료
-//
-//        String username= offer.getUsername();
-//        String email= offer.getEmail();
-//        String password = offer.getPassword();
-//
-//        String sqlStatement= "insert into infoSystem.Users (username, email, password) VALUES values (?,?,?)";
-//
-//        return (jdbcTemplate.update(sqlStatement, new Object[] {username, email, password}) == 1);
-//    }
+    public boolean insert(Offer offer) { //생성(C) -> Users 테이블로 수정 완료
+
+        int year= offer.getYear();
+        int semester= offer.getSemester();
+        String courseCode = offer.getCourseCode();
+
+        String sqlStatement= "insert into infoSystem.Users (year, semester, courseCode) VALUES values (?,?,?)";
+
+        return (jdbcTemplate.update(sqlStatement, new Object[] {year, semester, courseCode}) == 1);
+    }
 
     // crUd method
 //    public boolean update(Offer offer) { //수정(U)

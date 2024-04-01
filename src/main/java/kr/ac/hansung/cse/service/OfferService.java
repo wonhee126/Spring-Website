@@ -22,7 +22,7 @@ public class OfferService {
         return offerDao.getOffer(id);
     }
 
-//    public void insert(Offer offer) {
-//        offerDao.insert(offer);
-//    }
+    public void insert(Offer offer) {
+        offerDao.insert(offer);
+    }
 }

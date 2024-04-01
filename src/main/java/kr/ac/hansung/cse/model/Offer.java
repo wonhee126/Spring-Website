@@ -29,14 +29,16 @@ import javax.validation.constraints.Size;
 //    //@Size(min=5, max=100, message="Text must be between 5 and 100 chars")
 //    private String password;
 //}
-public class Offer {
-    private int user_id;
-    private int year;
-    private int semester;
-    private String courseCode;
-    private String courseName;
-    private String courseType;
-    private String professor;
-    private int credit;
+    public class Offer {
+        private int user_id;
+        private int year;
+        private int semester;
+        private String courseCode;
+        private String courseName;
+        private String courseType;
+        @Size(min=2, max=100, message = "Name must be between 2 and 100 chars")
+        private String professor;
+        private int credit;
 
-}
+    }
+
