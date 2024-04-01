@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OfferService {
@@ -24,5 +25,9 @@ public class OfferService {
 
     public void insert(Offer offer) {
         offerDao.insert(offer);
+    }
+
+    public List<Offer> getOfferById(int userId) {
+        return offerDao.getOffer(userId);
     }
 }

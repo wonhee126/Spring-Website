@@ -14,7 +14,7 @@
   </head>
   <body>
     <p> <a href="${pageContext.request.contextPath}/createoffer"> 수강신청 하기 </a></p>
-    <p> <a href="${pageContext.request.contextPath}/createoffer"> 수강신청 조회 </a></p>
+    <p> <a href="${pageContext.request.contextPath}/enrolledCourses"> 수강신청 조회 </a></p>
     <p> <a href="${pageContext.request.contextPath}/offers"> 학년별 이수 학점 조회 </a></p>
 
     <c:if test="${pageContext.request.userPrincipal.name != null}">

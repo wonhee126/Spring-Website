@@ -34,6 +34,7 @@
         <security:intercept-url pattern="/" access="permitAll()"/>
         <security:intercept-url pattern="/login" access="permitAll()"/>
         <security:intercept-url pattern="/offers" access="permitAll()"/>
+        <security:intercept-url pattern="/enrolledCourses" access="permitAll()"/>
         <security:intercept-url pattern="/createoffer" access="permitAll()"/>
         <security:intercept-url pattern="/docreate" access="permitAll()"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
