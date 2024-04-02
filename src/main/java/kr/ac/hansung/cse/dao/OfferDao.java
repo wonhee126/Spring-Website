@@ -36,7 +36,7 @@ public class OfferDao {
                     @Override
                     public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Offer offer = new Offer();
-                        offer.setUser_id(rs.getInt("user_id"));
+                        offer.setId(rs.getInt("id"));
                         offer.setYear(rs.getInt("수강년도"));
                         offer.setSemester(rs.getInt("학기"));
                         offer.setCourseCode(rs.getString("교과코드"));
@@ -76,16 +76,22 @@ public class OfferDao {
 
 
     // Crud method
-    public boolean insert(Offer offer) { //생성(C) -> Users 테이블로 수정 완료
+    public boolean insert(Offer offer) {
+        int id = 1;
+        int year = offer.getYear();
+        int semester = offer.getSemester();
+        //String courseCode = offer.getCourseCode();
+        String courseName = offer.getCourseName();
+        String courseType = offer.getCourseType();
+        String professor = offer.getProfessor();
+        int credit = offer.getCredit();
 
-        int year= offer.getYear();
-        int semester= offer.getSemester();
-        String courseCode = offer.getCourseCode();
+        String sqlStatement = "INSERT INTO infoSystem.EnrolledCourses (id, 년도, 학기, 교과목명, 교과구분, 담당교수, 학점) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-        String sqlStatement= "insert into infoSystem.Users (year, semester, courseCode) VALUES values (?,?,?)";
-
-        return (jdbcTemplate.update(sqlStatement, new Object[] {year, semester, courseCode}) == 1);
+        return (jdbcTemplate.update(sqlStatement, new Object[]{id, year, semester,courseName, courseType, professor, credit}) == 1);
     }
+
+
 
     // crUd method
 //    public boolean update(Offer offer) { //수정(U)

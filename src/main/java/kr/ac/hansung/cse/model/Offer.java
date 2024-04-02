@@ -30,15 +30,19 @@ import javax.validation.constraints.Size;
 //    private String password;
 //}
     public class Offer {
-        private int user_id;
+
+        private int id;
         private int year;
         private int semester;
         private String courseCode;
         private String courseName;
         private String courseType;
-        @Size(min=2, max=100, message = "Name must be between 2 and 100 chars")
         private String professor;
         private int credit;
 
-    }
+
+//    public int getId() {
+//        return id;
+//    }
+}
 

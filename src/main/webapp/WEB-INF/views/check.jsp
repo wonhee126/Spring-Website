@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: juwonhee
   Date: 4/2/24
-  Time: 6:15 AM
+  Time: 4:38 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,9 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-수강신청 조회 페이지입니다.
-<c:forEach var="offer" items="${offer}" >
-    <p> <c:out value="${offer}"> </c:out> </p>
-</c:forEach>
+
+<%--${offer.name} 가 새로운 제안을 하였습니다. 감사합니다.--%>
+<a href="${pageContext.request.contextPath}/enrolledCourses"> 수강신청 조회  </a>
+
 </body>
 </html>

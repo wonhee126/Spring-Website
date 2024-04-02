@@ -22,7 +22,7 @@ public class OfferController {
 
     @GetMapping("/offers") // 학년별 이수 학점 조회
     public String showOffers(Model model) {
-        List<Offer> offers = offerService.getOffers(new Offer().getUser_id());
+        List<Offer> offers = offerService.getOffers(new Offer().getId());
         model.addAttribute("id_offers", offers);
         return "offers";
     }
@@ -44,5 +44,26 @@ public class OfferController {
     public String showOffers3(Model model) {
 
         return "enrolledCourses";
+    }
+    @PostMapping("/check")
+    public String check(Model model, @Valid Offer offer, BindingResult result) {
+
+        // System.out.println(offer);
+        if(result.hasErrors()) {
+            System.out.println("== Form data does not validated ==");
+
+            List<ObjectError> errors = result.getAllErrors();
+
+            for(ObjectError error:errors) {
+                System.out.println(error.getDefaultMessage());
+            }
+
+            return "createoffer"; // 사용자가 입력한 값을 바인딩한 정보가 들어가므로 화면에 보이게 된다.
+        }
+
+        // Controller -> Service -> Dao
+        offerService.insert(offer);
+
+        return "check";
     }
 }

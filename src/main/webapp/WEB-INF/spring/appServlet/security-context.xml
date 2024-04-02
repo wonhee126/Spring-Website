@@ -37,6 +37,7 @@
         <security:intercept-url pattern="/enrolledCourses" access="hasRole('ROLE_USER')"/>
         <security:intercept-url pattern="/createoffer" access="hasRole('ROLE_USER')"/>
         <security:intercept-url pattern="/docreate" access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/check" access="hasRole('ROLE_USER')"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
         <security:intercept-url pattern="/**" access="denyAll()"/>
 
