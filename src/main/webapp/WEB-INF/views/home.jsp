@@ -16,11 +16,15 @@
     <p> <a href="${pageContext.request.contextPath}/createoffer"> 수강신청 하기 </a></p>
     <p> <a href="${pageContext.request.contextPath}/enrolledCourses"> 수강신청 조회 </a></p>
     <p> <a href="${pageContext.request.contextPath}/offers"> 학년별 이수 학점 조회 </a></p>
-<%--    <button type="submit" value="login">login</button>--%>
-
-    <c:if test="${pageContext.request.userPrincipal.name != null}">
-      <a href="javascript:document.getElementById('logout').submit()">Logout</a>
-    </c:if>
+<%--    login 안 되어있으면 login, login 되어있으면 logout을 보임--%>
+    <c:choose>
+        <c:when test="${empty pageContext.request.userPrincipal}">
+            <a href="${pageContext.request.contextPath}/login">Login</a>
+        </c:when>
+        <c:otherwise>
+            <a href="javascript:document.getElementById('logout').submit()">Logout</a>
+        </c:otherwise>
+    </c:choose>
 
     <form id="logout"  action="<c:url value="/logout" />"method="post">
       <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
