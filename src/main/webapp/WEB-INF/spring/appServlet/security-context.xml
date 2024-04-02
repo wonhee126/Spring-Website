@@ -13,8 +13,8 @@
 <!--        </security:authentication-provider>-->
         <security:authentication-provider>
             <security:jdbc-user-service data-source-ref="dataSource"
-                   users-by-username-query="select username, password, enabled from users where username=?"
-                   authorities-by-username-query="select username, authority from authorities where username=?" />
+                users-by-username-query="select username, password, enabled from Users where username=?"
+                authorities-by-username-query="select username, authority from Authorities where username=?" />
         </security:authentication-provider>
     </security:authentication-manager>
 

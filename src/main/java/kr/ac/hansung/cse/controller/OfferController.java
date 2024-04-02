@@ -3,6 +3,8 @@ package kr.ac.hansung.cse.controller;
 import kr.ac.hansung.cse.model.Offer;
 import kr.ac.hansung.cse.service.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -31,7 +33,6 @@ public class OfferController {
     public String createOffer(Model model) {
 //        Offer offers = offerService.insert(new Offer().getId());
         model.addAttribute("offer", new Offer());
-
         return "createoffer";
     }
     @GetMapping("/docreate") //상세보기

@@ -1,8 +1,12 @@
 package kr.ac.hansung.cse.controller;
 
+import kr.ac.hansung.cse.model.Offer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,7 +15,15 @@ public class HomeController {
     private static final Logger logger = LoggerFactory.getLogger("kr.ac.hansung.controller.HomeController");
 
     @GetMapping("/")
-    public String home(HttpServletRequest request) {
+    public String home(HttpServletRequest request, Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+
+        Offer offer = new Offer();
+        offer.setUsername(username);
+
+        //model.addAttribute("offer", offer);
+        model.addAttribute("username", username);
 
         String url = request.getRequestURL().toString();
         String clientIPaddr = request.getRemoteAddr();
