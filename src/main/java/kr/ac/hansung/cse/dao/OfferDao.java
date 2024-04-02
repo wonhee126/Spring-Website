@@ -30,7 +30,7 @@ public class OfferDao {
 
     //query and return a single object
     public List<Offer> getOffer(int userId) { // 특정 사용자의 코스 조회
-        String sqlStatement = "SELECT * FROM infoSystem.Courses WHERE user_id = 1";
+        String sqlStatement = "SELECT * FROM infoSystem.Courses WHERE id = 1";
         List<Offer> offers = jdbcTemplate.query(sqlStatement,
                 new RowMapper<Offer>() {
                     @Override
@@ -77,7 +77,7 @@ public class OfferDao {
 
     // Crud method
     public boolean insert(Offer offer) {
-        int id = 1;
+        int id = offer.getId();
         int year = offer.getYear();
         int semester = offer.getSemester();
         //String courseCode = offer.getCourseCode();

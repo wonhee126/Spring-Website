@@ -29,7 +29,7 @@ public class OfferController {
 
     @GetMapping("/createoffer") // 수강신청 하기
     public String createOffer(Model model) {
-
+//        Offer offers = offerService.insert(new Offer().getId());
         model.addAttribute("offer", new Offer());
 
         return "createoffer";
