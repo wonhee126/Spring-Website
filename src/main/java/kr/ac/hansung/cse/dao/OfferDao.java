@@ -29,14 +29,14 @@ public class OfferDao {
 
 
     //query and return a single object
-    public List<Offer> getOffer(int userId) { // 특정 사용자의 코스 조회
-        String sqlStatement = "SELECT * FROM infoSystem.Courses WHERE id = 1";
+    public List<Offer> getOffer(String username) { // 특정 사용자의 코스 조회
+        String sqlStatement = "SELECT * FROM infoSystem.courses WHERE username=?";
         List<Offer> offers = jdbcTemplate.query(sqlStatement,
                 new RowMapper<Offer>() {
                     @Override
                     public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Offer offer = new Offer();
-                        offer.setId(rs.getInt("id"));
+                        //offer.setId(rs.getInt("id"));
                         offer.setYear(rs.getInt("수강년도"));
                         offer.setSemester(rs.getInt("학기"));
                         offer.setCourseCode(rs.getString("교과코드"));
@@ -54,25 +54,30 @@ public class OfferDao {
 
     //query and return multiple objects
     // cRud method -> 생성, 조회, 수정, 삭제
-//    public List<Offer> getOffers() { //조회(R) -> all
-//
-//        String sqlStatement= "select * from infoSystem.Users;";
-//        return jdbcTemplate.query(sqlStatement, new RowMapper<Offer>() {
-//
-//            @Override
-//            public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
-//
-//                Offer offer= new Offer();
-//
-//                //offer.setId(rs.getInt("id"));
-//                offer.setUsername(rs.getString("username"));
-//                offer.setEmail(rs.getString("email"));
-//                offer.setPassword(rs.getString("password"));
-//
-//                return offer;
-//            }
-//        });
-//    }
+    public List<Offer> getOffers() { //조회(R) -> all
+
+        String sqlStatement= "select * from infoSystem.courses;";
+        return jdbcTemplate.query(sqlStatement, new RowMapper<Offer>() {
+
+            @Override
+            public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+                Offer offer= new Offer();
+
+                //offer.setId(rs.getInt("id"));
+                offer.setYear(rs.getInt("year"));
+                offer.setSemester(rs.getInt("semester"));
+                offer.setCourseCode(rs.getString("courseCode"));
+                offer.setCourseName(rs.getString("courseName"));
+                offer.setCourseType(rs.getString("courseType"));
+                offer.setProfessor(rs.getString("professor"));
+                offer.setCredit(rs.getInt("credit"));
+
+
+                return offer;
+            }
+        });
+    }
 
 
     // Crud method

@@ -19,15 +19,15 @@ public class OfferService {
 //        return offerDao.getOffers();
 //    }
 
-    public List<Offer> getOffers(int id){
-        return offerDao.getOffer(id);
+    public List<Offer> getOffers(){
+        return offerDao.getOffers();
     }
 
     public void insert(Offer offer) {
         offerDao.insert(offer);
     }
 
-    public List<Offer> getOfferById(int userId) {
-        return offerDao.getOffer(userId);
-    }
+//    public List<Offer> getOfferById(int userId) {
+//        return offerDao.getOffer(userId);
+//    }
 }

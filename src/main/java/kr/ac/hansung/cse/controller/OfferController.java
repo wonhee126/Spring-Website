@@ -24,7 +24,7 @@ public class OfferController {
 
     @GetMapping("/offers") // 학년별 이수 학점 조회
     public String showOffers(Model model) {
-        List<Offer> offers = offerService.getOffers(new Offer().getId());
+        List<Offer> offers = offerService.getOffers();
         model.addAttribute("id_offers", offers);
         return "offers";
     }
