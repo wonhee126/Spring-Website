@@ -62,6 +62,9 @@
     </tr>
     </tbody>
 </table>
+<form id="logout"  action="<c:url value="/logout" />"method="post">
+    <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
+</form>
 </body>
 <script>
     document.querySelectorAll(".detail-link").forEach(function (link) {

@@ -1,0 +1,71 @@
+/* Image 9 */
+.a {
+    text-decoration: none;
+}
+
+.img {
+    position: absolute;
+    width: 300px;
+    height: 450.73px;
+    left: calc(50% - 300px/2 - 217px);
+    top: calc(50% - 450.73px/2 + 0.37px);
+    background-image: url('../images/cat.png');
+}
+
+.body {
+    background-color: #D4E8BA;
+}
+
+/* Rectangle 17 */
+.rectangle-17 {
+    position: absolute;
+    width: 586px;
+    height: 70px;
+    left: calc(50% - 586px/2 + 293px);
+    top: calc(50% - 70px/2 + 55.5px);
+    background: #FDFAD4;
+    border-radius: 10px;
+}
+
+/* 수강 신청 조회 바로가기 */
+.request-link-text {
+    position: absolute;
+    width: 466.14px;
+    height: 36px;
+    left: calc(50% - 466.14px/2 + 293.74px);
+    top: calc(50% - 36px/2 + 55.5px);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: #000000;
+}
+
+/* Rectangle 17 */
+.rectangle-17-2 {
+    position: absolute;
+    left: 735px;
+    right: 149px;
+    top: 330px;
+    bottom: 432px;
+    background: #ACC5E7;
+    border-radius: 10px;
+}
+
+/* 수강 신청 성공 */
+.success-message {
+    position: absolute;
+    left: 834px;
+    right: 248px;
+    top: 347px;
+    bottom: 449px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: #0000FF;
+}
