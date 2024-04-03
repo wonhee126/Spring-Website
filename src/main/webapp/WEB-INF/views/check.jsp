@@ -48,5 +48,9 @@
     <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
 </form>
 </body>
-
+<script>
+    document.getElementById("main-link").onclick = function() {
+        window.location.href = "${pageContext.request.contextPath}/";
+    };
+</script>
 </html>

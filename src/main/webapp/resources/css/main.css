@@ -1,50 +1,59 @@
-@charset "UTF-8";
-
+.body{
+    background-color: #D4E8BA;
+}
 .formtable {
-    width:400px;
-    border: 1px solid blue;
-    margin:50px;
-    padding:10px;
-
+    position: absolute;
+    width: 800px;
+    height: 490px;
+    left: calc(50% - 400px);
+    top: calc(50% - 245px);
+    background: #FFFFFF;
 }
 
+/* 입력 레이블 스타일 */
 .label {
-    text-align: right;
-    vertical-align:top;
+    text-align: center; /* 레이블을 오른쪽으로 정렬 */
+    padding-right: 80px; /* 오른쪽 여백 추가 */
+    padding-left: 80px;
 }
 
+/* 입력 필드 스타일 */
 .control {
-    margin-left:10px;
+    width: 250px; /* 입력 필드 너비 조정 */
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-textarea {
-    width:300px;
-    height:100px;
-}
-
-input[type=text] {
-    width:300px;
-    border-width: 1px;
-    padding: 2px;
-
-}
-
-input[type=submit] {
-    display:block;
-    width:50%;
-    margin:0 auto;
-}
-
-input[type=submit]:hover {
-    background-color:#45a049;
-}
-
+/* 에러 메시지 스타일 */
 .error {
-    font-size: small;
-    color:red;
-    margin-left:10px;
+    font-size: 14px;
+    color: red;
+    margin-left: 10px;
 }
 
-.signInButton{
-    background-color:#45a049;
+/* 제출 버튼 스타일 */
+input[type=submit] {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #FFE3A8;
+    color: #042E71;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 제출 버튼 호버 스타일 */
+input[type=submit]:hover {
+    background-color: #ffb616;
+}
+
+/* 전체 body 스타일 */
+body {
+    background-color: #f0f0f0; /* 배경색 */
+    font-family: Arial, sans-serif; /* 폰트 설정 */
 }

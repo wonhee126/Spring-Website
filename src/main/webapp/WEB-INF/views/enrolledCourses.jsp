@@ -3,8 +3,6 @@
 <html>
 <head>
     <title>HSU 학사 정보 시스템-학년별 이수 학점 조회</title>
-<%--    <link rel="stylesheet" type="text/css"--%>
-<%--          href="${pageContext.request.contextPath}/resources/css/enrolledCourses.css" >--%>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/css/menubar.css" >
     <link rel="stylesheet" type="text/css"

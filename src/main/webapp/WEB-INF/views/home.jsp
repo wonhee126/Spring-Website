@@ -55,11 +55,9 @@
       <div class="right-text">수강 신청 조회</div>
   </a>
 
-  <h1>Welcome, ${username}!</h1>
+<%--  <h1>Welcome, ${username}!</h1>--%>
 
-<%--    <p> <a href="${pageContext.request.contextPath}/createoffer"> 수강신청 하기 </a></p>--%>
-<%--    <p> <a href="${pageContext.request.contextPath}/enrolledCourses"> 수강신청 조회 </a></p>--%>
-<%--    <p> <a href="${pageContext.request.contextPath}/offers"> 학년별 이수 학점 조회 </a></p>--%>
+
 
     <form id="logout"  action="<c:url value="/logout" />"method="post">
       <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
