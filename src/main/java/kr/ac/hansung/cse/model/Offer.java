@@ -37,7 +37,5 @@ public class Offer {
 
     @Size(min=1, max=10, message = "credit must be between 1 and 10 chars")
     private String credit;
-
-
 }
 

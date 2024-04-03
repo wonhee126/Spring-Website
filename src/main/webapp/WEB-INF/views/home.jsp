@@ -28,7 +28,6 @@
             <a href="javascript:document.getElementById('logout').submit()">Logout</a>
         </c:otherwise>
     </c:choose>
-    <%--    login 안 되어있으면 login, login 되어있으면 logout을 보임--%>
 
     <form id="logout"  action="<c:url value="/logout" />"method="post">
       <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />

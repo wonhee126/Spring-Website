@@ -56,17 +56,14 @@ public class OfferController {
         if (result.hasErrors()) {
             System.out.println("== Form data does not validate ==");
 
-            // 유효성 검사 실패시 발생한 오류들을 콘솔에 출력합니다.
             List<ObjectError> errors = result.getAllErrors();
             for (ObjectError error : errors) {
                 System.out.println(error.getDefaultMessage());
             }
 
-            // 유효성 검사 실패시 다시 수강신청 폼을 보여줍니다.
             return "createoffer";
         }
 
-        // 유효성 검사 통과시 check화면
         return "createoffer";
     }
 
@@ -75,7 +72,7 @@ public class OfferController {
     public String showOffers2(@RequestParam("year") String year,
                               @RequestParam("semester") String semester,
                               Model model) {
-        // 파라미터로 전달받은 year와 semester 정보를 이용하여 해당 데이터 조회
+
         List<Offer> allOffers = offerService.getOffers(); // 모든 데이터 조회
 
         List<Offer> filteredOffers = new ArrayList<>(); // (year, semester)에 해당하는 데이터만 담을 리스트 생성
@@ -85,12 +82,11 @@ public class OfferController {
             }
         }
 
-        // 필터링된 결과를 모델에 담아서 JSP 파일에서 사용할 수 있도록 전달
         model.addAttribute("year", year);
         model.addAttribute("semester", semester);
         model.addAttribute("offers", filteredOffers);
 
-        return "offercreated"; // 해당 데이터를 출력할 JSP 파일의 이름을 리턴
+        return "offercreated";
     }
 
 
@@ -101,10 +97,8 @@ public class OfferController {
         return "enrolledCourses";
     }
 
-    @PostMapping("/check")
+    @PostMapping("/check") // 수강신청 성공 후
     public String check(Model model, @Valid Offer offer, BindingResult result) {
-
-        // System.out.println(offer);
         if(result.hasErrors()) {
             System.out.println("== Form data does not validated ==");
 
@@ -115,10 +109,9 @@ public class OfferController {
             }
 
             model.addAttribute("offer", offer);
-            return "createoffer"; // 사용자가 입력한 값을 바인딩한 정보가 들어가므로 화면에 보이게 된다.
+            return "createoffer";
         }
 
-        // Controller -> Service -> Dao
         offerService.insert(offer);
 
         return "check";

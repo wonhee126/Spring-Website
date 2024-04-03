@@ -18,15 +18,6 @@
     </tr>
     </thead>
     <tbody>
-<%--        <tr>--%>
-<%--            <td>${offerList.year}</td>--%>
-<%--            <td>${offerList.semester}</td>--%>
-<%--            <td>${offerList.courseCode}</td>--%>
-<%--            <td>${offerList.courseName}</td>--%>
-<%--            <td>${offerList.courseType}</td>--%>
-<%--            <td>${offerList.professor}</td>--%>
-<%--            <td>${offerList.credit}</td>--%>
-<%--        </tr>--%>
 <c:forEach var="offerList" items="${offerList}">
     <tr>
         <td><c:out value="${offerList.year}" /></td>
@@ -36,12 +27,6 @@
         <td><c:out value="${offerList.courseType}" /></td>
         <td><c:out value="${offerList.professor}" /></td>
         <td><c:out value="${offerList.credit}" /></td>
-
-<%--        <td>${offerList.courseCode}</td>--%>
-<%--        <td>${offerList.courseName}</td>--%>
-<%--        <td>${offerList.courseType}</td>--%>
-<%--        <td>${offerList.professor}</td>--%>
-<%--        <td>${offerList.credit}</td>--%>
     </tr>
 </c:forEach>
     </tbody>

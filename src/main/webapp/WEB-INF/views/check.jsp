@@ -11,8 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-
-<%--${offer.name} 가 새로운 제안을 하였습니다. 감사합니다.--%>
 <a href="${pageContext.request.contextPath}/enrolledCourses"> 수강신청 조회  </a>
 
 </body>

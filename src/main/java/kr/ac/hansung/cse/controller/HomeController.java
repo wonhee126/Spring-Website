@@ -22,7 +22,6 @@ public class HomeController {
         Offer offer = new Offer();
         offer.setUsername(username);
 
-        //model.addAttribute("offer", offer);
         model.addAttribute("username", username);
 
         String url = request.getRequestURL().toString();

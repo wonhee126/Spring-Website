@@ -10,14 +10,8 @@ import java.util.Optional;
 
 @Service
 public class OfferService {
-
-    //service -> dao
     @Autowired
     private OfferDao offerDao;
-
-//    public List<Offer> getAllOffers() {
-//        return offerDao.getOffers();
-//    }
 
     public List<Offer> getOffers(){
         return offerDao.getOffers();
@@ -27,16 +21,8 @@ public class OfferService {
         offerDao.insert(offer);
     }
 
-    public List<Offer> getOffersByYearAndSemester(Integer year, Integer semester) {
-        return offerDao.getOffersByYearAndSemester();
-    }
     public List<Offer> offerList(){
         return offerDao.offerList();
     }
 
-
-
-//    public List<Offer> getOfferById(int userId) {
-//        return offerDao.getOffer(userId);
-//    }
 }
