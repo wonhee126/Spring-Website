@@ -37,13 +37,13 @@ public class OfferDao {
                     public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Offer offer = new Offer();
                         //offer.setId(rs.getInt("id"));
-                        offer.setYear(rs.getInt("수강년도"));
-                        offer.setSemester(rs.getInt("학기"));
+                        offer.setYear(rs.getString("수강년도"));
+                        offer.setSemester(rs.getString("학기"));
                         offer.setCourseCode(rs.getString("교과코드"));
                         offer.setCourseName(rs.getString("교과목명"));
                         offer.setCourseType(rs.getString("교과구분"));
                         offer.setProfessor(rs.getString("담당교수"));
-                        offer.setCredit(rs.getInt("학점"));
+                        offer.setCredit(rs.getString("학점"));
                         return offer;
                     }
                 });
@@ -65,13 +65,13 @@ public class OfferDao {
                 Offer offer= new Offer();
 
                 //offer.setId(rs.getInt("id"));
-                offer.setYear(rs.getInt("year"));
-                offer.setSemester(rs.getInt("semester"));
+                offer.setYear(rs.getString("year"));
+                offer.setSemester(rs.getString("semester"));
                 offer.setCourseCode(rs.getString("courseCode"));
                 offer.setCourseName(rs.getString("courseName"));
                 offer.setCourseType(rs.getString("courseType"));
                 offer.setProfessor(rs.getString("professor"));
-                offer.setCredit(rs.getInt("credit"));
+                offer.setCredit(rs.getString("credit"));
 
 
                 return offer;
@@ -90,13 +90,13 @@ public class OfferDao {
                 Offer offer= new Offer();
 
                 //offer.setId(rs.getInt("id"));
-                offer.setYear(rs.getInt("year"));
-                offer.setSemester(rs.getInt("semester"));
+                offer.setYear(rs.getString("year"));
+                offer.setSemester(rs.getString("semester"));
                 offer.setCourseCode(rs.getString("courseCode"));
                 offer.setCourseName(rs.getString("courseName"));
                 offer.setCourseType(rs.getString("courseType"));
                 offer.setProfessor(rs.getString("professor"));
-                offer.setCredit(rs.getInt("credit"));
+                offer.setCredit(rs.getString("credit"));
 
 
                 return offer;
@@ -107,13 +107,13 @@ public class OfferDao {
 
     // Crud method
     public boolean insert(Offer offer) {
-        int year = offer.getYear();
-        int semester = offer.getSemester();
+        String year = offer.getYear();
+        String semester = offer.getSemester();
         String courseCode = offer.getCourseCode();
         String courseName = offer.getCourseName();
         String courseType = offer.getCourseType();
         String professor = offer.getProfessor();
-        int credit = offer.getCredit();
+        String credit = offer.getCredit();
 
         String sqlStatement = "INSERT INTO enrolledCourses (year, semester, courseCode, courseName, courseType, professor, credit) VALUES (?,?, ?, ?, ?, ?, ?)";
 
@@ -131,13 +131,13 @@ public class OfferDao {
                 Offer offer= new Offer();
 
                 //offer.setId(rs.getInt("id"));
-                offer.setYear(rs.getInt("year"));
-                offer.setSemester(rs.getInt("semester"));
+                offer.setYear(rs.getString("year"));
+                offer.setSemester(rs.getString("semester"));
                 offer.setCourseCode(rs.getString("courseCode"));
                 offer.setCourseName(rs.getString("courseName"));
                 offer.setCourseType(rs.getString("courseType"));
                 offer.setProfessor(rs.getString("professor"));
-                offer.setCredit(rs.getInt("credit"));
+                offer.setCredit(rs.getString("credit"));
 
 
                 return offer;

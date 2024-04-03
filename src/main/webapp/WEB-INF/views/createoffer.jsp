@@ -48,7 +48,6 @@
 </head>
 <body>
 <p> <a href="${pageContext.request.contextPath}/"> 학사 정보 시스템 </a></p>
-
 <sf:form method="post" action="${pageContext.request.contextPath}/check" modelAttribute="offer">
     <table class="formtable">
         <tr>
@@ -66,7 +65,7 @@
         <tr>
             <td class="label"> 교과코드:</td>
             <td><sf:input class="control" type="text" path="courseCode"/> <br/>
-                <sf:errors path="semester" class="error" />
+                <sf:errors path="courseCode" class="error" />
             </td>
         </tr>
         <tr>
@@ -78,7 +77,7 @@
         <tr>
             <td class="label"> 교과구분:</td>
             <td><sf:input class="control" type="text" path="courseType"/>  <br/>
-                <sf:errors path="courseCode" class="error"/>
+                <sf:errors path="courseType" class="error"/>
             </td>
         </tr>
         <tr>

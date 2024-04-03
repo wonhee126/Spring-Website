@@ -7,42 +7,36 @@ import lombok.ToString;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
-//public class Offer {
-//    private int user_id;
-//    private int year;
-//    private int
-//    //private int id;
-//
-//    //@Size(min=2, max=100, message = "Name must be between 2 and 100 chars")
-//    private String username;
-//
-//    //@Email(message="Please provide a valid email address")
-//    //@NotEmpty(message="The email address cannot be empty")
-//    private String email;
-//
-//    //@Size(min=5, max=100, message="Text must be between 5 and 100 chars")
-//    private String password;
-//}
 public class Offer {
     private String username;
     private int id;
-    private int year;
-    private int semester;
+
+    @Size(min=4, max=4,message="year must be 4 chars")
+    private String year;
+
+    @Size(min=1, max=1,message="year must be 1 chars")
+    private String semester;
+
+    @Size(min=7, max=7,message="courseCode must be 7 chars")
     private String courseCode;
+
+    @Size(min=2, max=20,message="courseName must be between 2 and 20 chars")
     private String courseName;
-    @NotNull
+
+    @Size(min=1, max=10,message="courseType must be between 1 and 10 chars")
     private String courseType;
+
+    @Size(min=2, max=10, message = "professor must be between 2 and 10 chars")
     private String professor;
-    private int credit;
+
+    @Size(min=1, max=10, message = "credit must be between 1 and 10 chars")
+    private String credit;
 
 
 }
