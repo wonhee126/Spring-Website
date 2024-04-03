@@ -14,7 +14,7 @@
             href="${pageContext.request.contextPath}/resources/css/home.css" >
       <link rel="stylesheet" type="text/css"
             href="${pageContext.request.contextPath}/resources/css/menubar.css" >
-    <title>학사 정보 시스템</title>
+    <title>HSU 학사 정보 시스템</title>
   </head>
   <body>
   <div class="menubar">

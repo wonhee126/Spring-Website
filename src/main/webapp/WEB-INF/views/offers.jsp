@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>학년별 이수 학점 조회</title>
+    <title>HSU 학사 정보 시스템-학년별 이수 학점 조회</title>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/css/offers.css" >
     <link rel="stylesheet" type="text/css"

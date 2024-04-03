@@ -9,37 +9,68 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>상세보기 페이지</title>
+    <title>HSU 학사 정보 시스템-상세보기</title>
 </head>
+<link rel="stylesheet" type="text/css"
+      href="${pageContext.request.contextPath}/resources/css/offercreated.css" >
+<link rel="stylesheet" type="text/css"
+      href="${pageContext.request.contextPath}/resources/css/menubar.css" >
 <body>
-<h2>${year}년 ${semester}학기 상세보기</h2>
-<table border="1">
+<div class="menubar">
+    <div id="main-link" class="main-link">HSU 학사 정보 시스템</div>
+    <div class="login">
+        <div class="rectangle3">
+            <%--    login 안 되어있으면 login, login 되어있으면 logout을 보임--%>
+            <c:choose>
+                <c:when test="${empty pageContext.request.userPrincipal}">
+                    <a href="${pageContext.request.contextPath}/login">
+                        <div class="login_text">login</div>
+                    </a>
+                </c:when>
+                <c:otherwise>
+                    <a href="javascript:document.getElementById('logout').submit()">
+                        <div class="login_text">logout</div>
+                    </a>
+                </c:otherwise>
+            </c:choose>
+        </div>
+    </div>
+</div>
+
+<div class="description">${year}년 ${semester}학기 상세보기</div>
+
+<table border="1" class="offerTable">
     <thead>
-    <tr>
-        <th>수강년도</th>
-        <th>학기</th>
-        <th>교과코드</th>
-        <th>교과명</th>
-        <th>교과구분</th>
-        <th>교수</th>
-        <th>학점</th>
+    <tr class="thead-tr">
+        <th class="th">수강년도</th>
+        <th class="th">학기</th>
+        <th class="th">교과코드</th>
+        <th class="th">교과명</th>
+        <th class="th">교과구분</th>
+        <th class="th">교수</th>
+        <th class="th">학점</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="offer" items="${offers}">
         <tr>
-            <td><c:out value="${offer.year}" /></td>
-            <td><c:out value="${offer.semester}" /></td>
-            <td><c:out value="${offer.courseCode}" /></td>
-            <td><c:out value="${offer.courseName}" /></td>
-            <td><c:out value="${offer.courseType}" /></td>
-            <td><c:out value="${offer.professor}" /></td>
-            <td><c:out value="${offer.credit}" /></td>
+            <td class="tbody-td"><c:out value="${offer.year}" /></td>
+            <td class="tbody-td"><c:out value="${offer.semester}" /></td>
+            <td class="tbody-td"><c:out value="${offer.courseCode}" /></td>
+            <td class="tbody-td"><c:out value="${offer.courseName}" /></td>
+            <td class="tbody-td"><c:out value="${offer.courseType}" /></td>
+            <td class="tbody-td"><c:out value="${offer.professor}" /></td>
+            <td class="tbody-td"><c:out value="${offer.credit}" /></td>
         </tr>
     </c:forEach>
 
     </tbody>
 </table>
 </body>
+<script>
+    document.getElementById("main-link").onclick = function() {
+        window.location.href = "${pageContext.request.contextPath}/";
+    };
+</script>
 </html>
 

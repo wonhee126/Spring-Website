@@ -14,7 +14,7 @@
           href="${pageContext.request.contextPath}/resources/css/login.css" >
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/css/menubar.css" >
-    <title>로그인</title>
+    <title>HSU 학사 정보 시스템-로그인</title>
 </head>
 
 <body>

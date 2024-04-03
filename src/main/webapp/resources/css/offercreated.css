@@ -1,0 +1,49 @@
+.description{
+    position: absolute;
+    width: 320px;
+    height: 36px;
+    left: 19px;
+    top: 151px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #000000;
+}
+
+
+.offerTable{
+    position: absolute;
+    width: 800px;
+    height: 399px;
+    left: calc(50% - 800px/2);
+    top: calc(50% - 399px/2 + 67.5px);
+}
+
+.thead-tr{
+    background-color: #AFD181;
+}
+.tbody-tr{
+    background-color: #AFD181;
+}
+.th{
+    text-align: center;
+    font-size: 30px;
+    color: #2B2F5C;
+}
+
+.tbody-td{
+    text-align: center;
+    font-size: 20px;
+    color: #2B2F5C;
+}
+
+.td{
+    text-align: center;
+    font-size: 30px;
+    color: #2B2F5C;
+}
