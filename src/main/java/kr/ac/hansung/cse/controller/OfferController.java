@@ -94,6 +94,7 @@ public class OfferController {
     public String showOffers3(Model model, Offer offer) {
         List<Offer> offerList = offerService.offerList();
         model.addAttribute("offerList", offerList);
+
         return "enrolledCourses";
     }
 

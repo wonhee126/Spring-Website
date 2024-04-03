@@ -8,6 +8,7 @@
 <table border="1">
     <thead>
     <tr>
+        <th>번호</th>
         <th>년도</th>
         <th>학기</th>
         <th>교과코드</th>
@@ -18,8 +19,9 @@
     </tr>
     </thead>
     <tbody>
-<c:forEach var="offerList" items="${offerList}">
+<c:forEach var="offerList" items="${offerList}" varStatus="status">
     <tr>
+        <td><c:out value="${status.index + 1}" /></td>
         <td><c:out value="${offerList.year}" /></td>
         <td><c:out value="${offerList.semester}" /></td>
         <td><c:out value="${offerList.courseCode}" /></td>
