@@ -1,0 +1,155 @@
+.error{
+    position: absolute;
+    width: 500px;
+    height: 88px;
+    left: 390px;
+    top: 272px;
+
+}
+
+.username{
+    position: absolute;
+    width: 500px;
+    height: 88px;
+    left: calc(50% - 500px/2 - 1px);
+    top: calc(50% - 88px/2 + 10px);
+    font-size: 30px;
+    background: #ACC5E7;
+}
+
+.username::placeholder {
+    position: absolute;
+    width: 251px;
+    height: 60px;
+    left: calc(50% - 251px/2 + 0.5px);
+    top: calc(50% - 60px/2 + 10px);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    text-align: center;
+    color: #A4A4A4;
+}
+
+.password{
+    position: absolute;
+    width: 500px;
+    height: 88px;
+    left: calc(50% - 500px/2 - 1px);
+    top: calc(50% - 88px/2 + 116px);
+    font-size: 30px;
+    background: #ACC5E7;
+}
+
+.password::placeholder {
+    position: absolute;
+    width: 251px;
+    height: 60px;
+    left: calc(50% - 251px/2 - 0.5px);
+    top: calc(50% - 60px/2 + 116px);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    text-align: center;
+    color: #A4A4A4;
+}
+
+.loginbtn{
+    position: absolute;
+    width: 500px;
+    height: 88px;
+    left: calc(50% - 500px/2 - 1px);
+    top: calc(50% - 88px/2 + 222px);
+    background: #FFE3A8;
+}
+
+.loginbtn-text{
+    position: absolute;
+    width: 149px;
+    height: 60px;
+    left: calc(50% - 149px/2 - 0.5px);
+    top: calc(50% - 60px/2 + 222px);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    text-align: center;
+    color: black;
+}
+
+.error{
+    position: absolute;
+    width: 500px;
+    height: 88px;
+    left: calc(50% - 500px/2);
+    top: calc(50% - 88px/2 - 100px);
+    background: #F7B7B4;
+}
+
+.error-text{
+    position: absolute;
+    width: 454px;
+    height: 36px;
+    left: calc(50% - 454px/2);
+    top: calc(50% - 36px/2 - 100px);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: rgba(255, 0, 0, 0.5);
+}
+
+.logout{
+    position: absolute;
+    width: 500px;
+    height: 88px;
+    left: calc(50% - 500px/2);
+    top: calc(50% - 88px/2 - 100px);
+    background: #ACC5E7;
+}
+
+.logout-text{
+    position: absolute;
+    width: 454px;
+    height: 36px;
+    left: calc(50% - 454px/2);
+    top: calc(50% - 80px/2 - 100px);
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: blue;
+}
+
+.pleaseLogin{
+    position: absolute;
+    width: 314px;
+    height: 60px;
+    left: calc(50% - 314px/2 + 31px);
+    top: calc(50% - 60px/2 - 211px);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    text-align: center;
+    color: #000000;
+}
+
+.img{
+    position: absolute;
+    width: 50px;
+    height: 55.74px;
+    left: calc(50% - 50px/2 - 151px);
+    top: calc(50% - 20px/2 - 209.13px + 15px);
+    background-image: url("../images/sangzi.png");
+}
