@@ -37,6 +37,9 @@
             <td><c:out value="${offer.credit}" /></td>
         </tr>
     </c:forEach>
+<%--<c:forEach var="offer" items="${offers}" >--%>
+<%--    <p> <c:out value="${offer}"> </c:out> </p>--%>
+<%--</c:forEach>--%>
     </tbody>
 </table>
 </body>

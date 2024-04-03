@@ -107,18 +107,42 @@ public class OfferDao {
 
     // Crud method
     public boolean insert(Offer offer) {
-        int id = offer.getId();
         int year = offer.getYear();
         int semester = offer.getSemester();
-        //String courseCode = offer.getCourseCode();
+        String courseCode = offer.getCourseCode();
         String courseName = offer.getCourseName();
         String courseType = offer.getCourseType();
         String professor = offer.getProfessor();
         int credit = offer.getCredit();
 
-        String sqlStatement = "INSERT INTO infoSystem.EnrolledCourses (id, 년도, 학기, 교과목명, 교과구분, 담당교수, 학점) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sqlStatement = "INSERT INTO enrolledCourses (year, semester, courseCode, courseName, courseType, professor, credit) VALUES (?,?, ?, ?, ?, ?, ?)";
 
-        return (jdbcTemplate.update(sqlStatement, new Object[]{id, year, semester,courseName, courseType, professor, credit}) == 1);
+        return (jdbcTemplate.update(sqlStatement, new Object[]{year, semester,courseCode,courseName, courseType, professor, credit}) == 1);
+    }
+
+    public List<Offer> offerList() { //조회(R) -> all
+
+        String sqlStatement= "select * from enrolledCourses;";
+        return jdbcTemplate.query(sqlStatement, new RowMapper<Offer>() {
+
+            @Override
+            public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+                Offer offer= new Offer();
+
+                //offer.setId(rs.getInt("id"));
+                offer.setYear(rs.getInt("year"));
+                offer.setSemester(rs.getInt("semester"));
+                offer.setCourseCode(rs.getString("courseCode"));
+                offer.setCourseName(rs.getString("courseName"));
+                offer.setCourseType(rs.getString("courseType"));
+                offer.setProfessor(rs.getString("professor"));
+                offer.setCredit(rs.getInt("credit"));
+
+
+                return offer;
+            }
+        });
     }
 
 

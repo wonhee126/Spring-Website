@@ -9,6 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Getter
@@ -38,6 +39,7 @@ public class Offer {
     private int semester;
     private String courseCode;
     private String courseName;
+    @NotNull
     private String courseType;
     private String professor;
     private int credit;

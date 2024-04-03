@@ -78,10 +78,12 @@ public class OfferController {
 
 
     @GetMapping("/enrolledCourses") // 수강신청 조회
-    public String showOffers3(Model model) {
-
+    public String showOffers3(Model model, Offer offer) {
+        List<Offer> offerList = offerService.offerList();
+        model.addAttribute("offerList", offerList);
         return "enrolledCourses";
     }
+
     @PostMapping("/check")
     public String check(Model model, @Valid Offer offer, BindingResult result) {
 
@@ -95,6 +97,7 @@ public class OfferController {
                 System.out.println(error.getDefaultMessage());
             }
 
+            model.addAttribute("offer", offer);
             return "createoffer"; // 사용자가 입력한 값을 바인딩한 정보가 들어가므로 화면에 보이게 된다.
         }
 

@@ -64,6 +64,12 @@
             </td>
         </tr>
         <tr>
+            <td class="label"> 교과코드:</td>
+            <td><sf:input class="control" type="text" path="courseCode"/> <br/>
+                <sf:errors path="semester" class="error" />
+            </td>
+        </tr>
+        <tr>
             <td class="label"> 교과목명:</td>
             <td><sf:input class="control" type="text" path="courseName"/>  <br/>
                 <sf:errors path="courseName" class="error"/>
@@ -71,7 +77,7 @@
         </tr>
         <tr>
             <td class="label"> 교과구분:</td>
-            <td><sf:input class="control" type="text" path="courseCode"/>  <br/>
+            <td><sf:input class="control" type="text" path="courseType"/>  <br/>
                 <sf:errors path="courseCode" class="error"/>
             </td>
         </tr>

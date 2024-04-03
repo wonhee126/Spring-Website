@@ -30,6 +30,11 @@ public class OfferService {
     public List<Offer> getOffersByYearAndSemester(Integer year, Integer semester) {
         return offerDao.getOffersByYearAndSemester();
     }
+    public List<Offer> offerList(){
+        return offerDao.offerList();
+    }
+
+
 
 //    public List<Offer> getOfferById(int userId) {
 //        return offerDao.getOffer(userId);
