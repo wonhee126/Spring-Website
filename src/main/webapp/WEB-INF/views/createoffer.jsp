@@ -16,7 +16,6 @@
 
 </head>
 <body>
-<p> <a href="${pageContext.request.contextPath}/"> 학사 정보 시스템 </a></p>
 <sf:form method="post" action="${pageContext.request.contextPath}/check" modelAttribute="offer">
     <table class="formtable">
         <tr>

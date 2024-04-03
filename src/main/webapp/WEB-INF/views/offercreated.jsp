@@ -12,7 +12,7 @@
     <title>HSU 학사 정보 시스템-상세보기</title>
 </head>
 <link rel="stylesheet" type="text/css"
-      href="${pageContext.request.contextPath}/resources/css/offercreated.css" >
+      href="${pageContext.request.contextPath}/resources/css/offers.css" >
 <link rel="stylesheet" type="text/css"
       href="${pageContext.request.contextPath}/resources/css/menubar.css" >
 <body>
@@ -41,8 +41,8 @@
 
 <table border="1" class="offerTable">
     <thead>
-    <tr class="thead-tr">
-        <th class="th">수강년도</th>
+    <tr class="oc-thead-tr">
+        <th class="oc-th">수강년도</th>
         <th class="th">학기</th>
         <th class="th">교과코드</th>
         <th class="th">교과명</th>
@@ -51,10 +51,10 @@
         <th class="th">학점</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody class="oc-tbody">
     <c:forEach var="offer" items="${offers}">
         <tr>
-            <td class="tbody-td"><c:out value="${offer.year}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offer.year}" /></td>
             <td class="tbody-td"><c:out value="${offer.semester}" /></td>
             <td class="tbody-td"><c:out value="${offer.courseCode}" /></td>
             <td class="tbody-td"><c:out value="${offer.courseName}" /></td>

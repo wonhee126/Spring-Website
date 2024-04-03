@@ -1,31 +1,85 @@
 .offerTable{
     position: absolute;
-    width: 800px;
-    height: 399px;
-    left: calc(50% - 800px/2);
-    top: calc(50% - 399px/2 + 67.5px);
+    width: 1171px;
+    height: 428px;
+    left: calc(50% - 1171px/2 + 0.5px);
+    top: calc(50% - 428px/2 + 82px);
+}
+.description{
+    position: absolute;
+    width: 320px;
+    height: 36px;
+    left: 19px;
+    top: 151px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #000000;
 }
 
-.thead-tr{
-    background-color: #AFD181;
+.thead-tr {
+    background-color: #D4E8BA;
 }
-.tbody-tr{
-    background-color: #AFD181;
+.oc-thead-tr{
+    background-color: #D4E8BA;
 }
-.th{
+.th {
+    width: 150px;
+    padding: 8px;
     text-align: center;
+    border-bottom: 1px solid #ddd;
     font-size: 30px;
-    color: #2B2F5C;
 }
 
-.tbody-td{
+.oc-th{
+    padding: 8px;
     text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 30px;
+}
+
+.tbody-td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
     font-size: 20px;
-    color: #2B2F5C;
 }
 
-.td{
+.oc-tbody-td{
+    padding: 8px;
     text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+}
+
+.oc-tbody{
+    background-color: #FFE3A8;
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+}
+.content{
+    width: 300px;
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+}
+
+.tbody-tr{
+    background-color: #FFE3A8;
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
     font-size: 30px;
-    color: #2B2F5C;
+}
+
+.detail-link{
+    color: #EF7069;
 }

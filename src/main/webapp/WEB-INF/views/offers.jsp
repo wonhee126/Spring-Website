@@ -44,7 +44,7 @@
     <c:set var="totalCredits" value="0" />
     <c:forEach var="year" items="${year_semester_map}">
         <c:forEach var="semester_entry" items="${year.value}">
-            <tr>
+            <tr class="content">
                 <td class="tbody-td"><c:out value="${year.key}" /></td>
                 <td class="tbody-td"><c:out value="${semester_entry.key}" /></td>
                 <td class="tbody-td"><c:out value="${semester_entry.value}" /></td>
