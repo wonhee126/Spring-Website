@@ -27,6 +27,10 @@ public class OfferService {
         offerDao.insert(offer);
     }
 
+    public List<Offer> getOffersByYearAndSemester(Integer year, Integer semester) {
+        return offerDao.getOffersByYearAndSemester();
+    }
+
 //    public List<Offer> getOfferById(int userId) {
 //        return offerDao.getOffer(userId);
 //    }

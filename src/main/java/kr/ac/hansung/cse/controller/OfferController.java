@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 public class OfferController {
@@ -25,7 +24,27 @@ public class OfferController {
     @GetMapping("/offers") // 학년별 이수 학점 조회
     public String showOffers(Model model) {
         List<Offer> offers = offerService.getOffers();
-        model.addAttribute("id_offers", offers);
+        Map<Integer, Map<Integer, Integer>> yearSemesterMap = new HashMap<>();
+
+        for (Offer offer : offers) {
+            int year = offer.getYear();
+            int semester = offer.getSemester();
+            int credit = offer.getCredit();
+
+            if (!yearSemesterMap.containsKey(year)) {
+                yearSemesterMap.put(year, new HashMap<>());
+            }
+
+            Map<Integer, Integer> semesterMap = yearSemesterMap.get(year);
+            if (semesterMap.containsKey(semester)) {
+                int totalCredit = semesterMap.get(semester);
+                semesterMap.put(semester, totalCredit + credit);
+            } else {
+                semesterMap.put(semester, credit);
+            }
+        }
+
+        model.addAttribute("year_semester_map", yearSemesterMap);
         return "offers";
     }
 
@@ -35,11 +54,28 @@ public class OfferController {
         model.addAttribute("offer", new Offer());
         return "createoffer";
     }
-    @GetMapping("/docreate") //상세보기
-    public String showOffers2(Model model) {
+    @GetMapping("/docreate") // 상세보기
+    public String showOffers2(@RequestParam("year") Integer year,
+                              @RequestParam("semester") Integer semester,
+                              Model model) {
+        // 파라미터로 전달받은 year와 semester 정보를 이용하여 해당 데이터 조회
+        List<Offer> allOffers = offerService.getOffers(); // 모든 데이터 조회
 
-        return "offercreated";
+        List<Offer> filteredOffers = new ArrayList<>(); // (year, semester)에 해당하는 데이터만 담을 리스트 생성
+        for (Offer offer : allOffers) {
+            if (offer.getYear() == year && offer.getSemester() == semester) { // 해당 학년도와 학기에 해당하는 데이터일 경우
+                filteredOffers.add(offer); // 리스트에 추가
+            }
+        }
+
+        // 필터링된 결과를 모델에 담아서 JSP 파일에서 사용할 수 있도록 전달
+        model.addAttribute("year", year);
+        model.addAttribute("semester", semester);
+        model.addAttribute("offers", filteredOffers);
+
+        return "offercreated"; // 해당 데이터를 출력할 JSP 파일의 이름을 리턴
     }
+
 
     @GetMapping("/enrolledCourses") // 수강신청 조회
     public String showOffers3(Model model) {

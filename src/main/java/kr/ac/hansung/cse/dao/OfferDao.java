@@ -79,6 +79,31 @@ public class OfferDao {
         });
     }
 
+    public List<Offer> getOffersByYearAndSemester() { //조회(R) -> all
+
+        String sqlStatement= "select * from infoSystem.courses;";
+        return jdbcTemplate.query(sqlStatement, new RowMapper<Offer>() {
+
+            @Override
+            public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+                Offer offer= new Offer();
+
+                //offer.setId(rs.getInt("id"));
+                offer.setYear(rs.getInt("year"));
+                offer.setSemester(rs.getInt("semester"));
+                offer.setCourseCode(rs.getString("courseCode"));
+                offer.setCourseName(rs.getString("courseName"));
+                offer.setCourseType(rs.getString("courseType"));
+                offer.setProfessor(rs.getString("professor"));
+                offer.setCredit(rs.getInt("credit"));
+
+
+                return offer;
+            }
+        });
+    }
+
 
     // Crud method
     public boolean insert(Offer offer) {

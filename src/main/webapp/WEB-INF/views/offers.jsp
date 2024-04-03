@@ -15,15 +15,18 @@
     </tr>
     </thead>
     <tbody>
+    <c:set var="year_semester_map" value="${year_semester_map}" />
     <c:set var="totalCredits" value="0" />
-    <c:forEach var="offer" items="${id_offers}" >
-        <tr>
-            <td><c:out value="${offer.year}" /></td>
-            <td><c:out value="${offer.semester}" /></td>
-            <td><c:out value="${offer.credit}" /></td>
-            <td><a href="${pageContext.request.contextPath}/docreate"> 상세보기  </a></td>
-            <c:set var="totalCredits" value="${totalCredits + offer.credit}" />
-        </tr>
+    <c:forEach var="year" items="${year_semester_map}">
+        <c:forEach var="semester_entry" items="${year.value}">
+            <tr>
+                <td><c:out value="${year.key}" /></td>
+                <td><c:out value="${semester_entry.key}" /></td>
+                <td><c:out value="${semester_entry.value}" /></td>
+                <td><a href="${pageContext.request.contextPath}/docreate?year=${year.key}&semester=${semester_entry.key}"> 상세보기  </a></td>
+                <c:set var="totalCredits" value="${totalCredits + semester_entry.value}" />
+            </tr>
+        </c:forEach>
     </c:forEach>
     <tr>
         <td colspan="2">총계</td>
