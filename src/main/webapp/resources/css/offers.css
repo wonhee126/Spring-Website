@@ -1,3 +1,23 @@
+.username{
+    /* ##님의 학년별 이수 학점 */
+
+    position: absolute;
+    width: 500px;
+    height: 36px;
+    left: 19px;
+    top: 151px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+
+    color: #000000;
+
+
+}
 .offerTable{
     position: absolute;
     width: 1171px;

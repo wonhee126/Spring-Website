@@ -60,7 +60,7 @@
     width: 306px;
     height: 36px;
     left: calc(50% - 306px/2 - 411px);
-    bottom: 143px;
+    top: calc(50% - 36px/2 + 259.5px);
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;

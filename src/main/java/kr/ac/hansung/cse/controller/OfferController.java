@@ -25,6 +25,7 @@ public class OfferController {
 
     @GetMapping("/offers") // 학년별 이수 학점 조회
     public String showOffers(Model model) {
+
         List<Offer> offers = offerService.getOffers();
         Map<String, Map<String, Integer>> yearSemesterMap = new HashMap<>();
 
@@ -48,6 +49,14 @@ public class OfferController {
         }
 
         model.addAttribute("year_semester_map", yearSemesterMap);
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        model.addAttribute("username", username);
+
+        Offer offer = new Offer();
+        offer.setUsername(username);
+
         return "offers";
     }
 

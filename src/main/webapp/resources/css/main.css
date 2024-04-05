@@ -40,7 +40,9 @@ input[type=submit] {
     margin-top: 10px;
     padding: 10px;
     background-color: #FFE3A8;
-    color: #042E71;
+    color: white;
+    font-size: 20px;
+    /*color: #042E71;*/
     border: none;
     border-radius: 10px;
     cursor: pointer;

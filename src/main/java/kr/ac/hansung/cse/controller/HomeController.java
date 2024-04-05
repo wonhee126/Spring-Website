@@ -18,11 +18,11 @@ public class HomeController {
     public String home(HttpServletRequest request, Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
+        model.addAttribute("username", username);
 
         Offer offer = new Offer();
         offer.setUsername(username);
 
-        model.addAttribute("username", username);
 
         String url = request.getRequestURL().toString();
         String clientIPaddr = request.getRemoteAddr();
