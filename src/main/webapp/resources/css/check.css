@@ -1,4 +1,3 @@
-/* Image 9 */
 .a {
     text-decoration: none;
 }
@@ -16,7 +15,6 @@
     background-color: #D4E8BA;
 }
 
-/* Rectangle 17 */
 .rectangle-17 {
     position: absolute;
     width: 586px;
@@ -27,7 +25,6 @@
     border-radius: 10px;
 }
 
-/* 수강 신청 조회 바로가기 */
 .request-link-text {
     position: absolute;
     width: 466.14px;
@@ -43,7 +40,6 @@
     color: #F1726B;
 }
 
-/* Rectangle 17 */
 .rectangle-17-2 {
     position: absolute;
     left: 735px;
@@ -54,7 +50,6 @@
     border-radius: 10px;
 }
 
-/* 수강 신청 성공 */
 .success-message {
     position: absolute;
     left: 834px;

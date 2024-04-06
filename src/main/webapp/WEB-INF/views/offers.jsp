@@ -29,7 +29,9 @@
         </div>
     </div>
 </div>
+
 <div class="username">${username}님의 학년별 이수 학점 조회</div>
+
 <table border="1" class="offerTable">
     <thead>
     <tr class="thead-tr">

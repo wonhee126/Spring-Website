@@ -1,23 +1,18 @@
 .username{
-    /* ##님의 학년별 이수 학점 */
-
     position: absolute;
     width: 500px;
     height: 36px;
     left: 19px;
     top: 151px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 36px;
     text-align: center;
-
     color: #000000;
-
-
 }
+
 .offerTable{
     position: absolute;
     width: 1171px;
@@ -25,29 +20,30 @@
     left: calc(50% - 1171px/2 + 0.5px);
     top: calc(50% - 428px/2 + 82px);
 }
+
 .description{
     position: absolute;
     width: 320px;
     height: 36px;
     left: 19px;
     top: 151px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
     line-height: 30px;
     text-align: center;
-
     color: #000000;
 }
 
 .thead-tr {
     background-color: #D4E8BA;
 }
+
 .oc-thead-tr{
     background-color: #D4E8BA;
 }
+
 .th {
     width: 150px;
     padding: 8px;
@@ -84,6 +80,7 @@
     border-bottom: 1px solid #ddd;
     font-size: 20px;
 }
+
 .content{
     width: 300px;
     padding: 8px;

@@ -39,7 +39,6 @@
         </div>
     </div>
 </div>
-
 <sf:form method="post" action="${pageContext.request.contextPath}/check" modelAttribute="offer">
         <table class="formtable">
             <tr>
@@ -91,13 +90,17 @@
             </tr>
         </table>
         </sf:form>
+
+<c:if test="${not empty errorMsg}">
+    <div class="existError">${errorMsg}</div>
+</c:if>
+
 <form id="logout"  action="<c:url value="/logout" />"method="post">
     <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
 </form>
 </body>
 <script>
     document.getElementById("main-link").onclick = function() {
-        window.location.href = "${pageContext.request.contextPath}/";
-    };
+        window.location.href = "${pageContext.request.contextPath}/"; };
 </script>
 </html>

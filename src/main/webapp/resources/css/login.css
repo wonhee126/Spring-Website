@@ -4,7 +4,6 @@
     height: 88px;
     left: 390px;
     top: 272px;
-
 }
 
 .username{
@@ -120,7 +119,6 @@
     height: 36px;
     left: calc(50% - 454px/2);
     top: calc(50% - 80px/2 - 100px);
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;

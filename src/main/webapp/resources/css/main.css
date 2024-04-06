@@ -10,30 +10,41 @@
     background: #FFFFFF;
 }
 
-/* 입력 레이블 스타일 */
 .label {
-    text-align: center; /* 레이블을 오른쪽으로 정렬 */
-    padding-right: 80px; /* 오른쪽 여백 추가 */
+    text-align: center;
+    padding-right: 80px;
     padding-left: 80px;
 }
 
-/* 입력 필드 스타일 */
 .control {
-    width: 250px; /* 입력 필드 너비 조정 */
+    width: 250px;
     padding: 5px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-/* 에러 메시지 스타일 */
 .error {
     font-size: 14px;
     color: red;
     margin-left: 10px;
 }
 
-/* 제출 버튼 스타일 */
+.existError{
+        position: absolute;
+        width: 500px;
+        height: 36px;
+        left: calc(50% - 500px);
+        top: 145px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+
+        color: #2B2F5C;
+}
+
 input[type=submit] {
     display: block;
     width: 100%;
@@ -42,20 +53,17 @@ input[type=submit] {
     background-color: #FFE3A8;
     color: white;
     font-size: 20px;
-    /*color: #042E71;*/
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-/* 제출 버튼 호버 스타일 */
 input[type=submit]:hover {
     background-color: #ffb616;
 }
 
-/* 전체 body 스타일 */
 body {
-    background-color: #f0f0f0; /* 배경색 */
-    font-family: Arial, sans-serif; /* 폰트 설정 */
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
 }

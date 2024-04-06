@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.net.SocketOption;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -96,5 +97,16 @@ public class OfferDao {
         String sqlStatement= "delete from offers where id=?";
         return (jdbcTemplate.update(sqlStatement, new Object[] {id}) == 1);
     }
+//
+//    public String getCourseCode(String courseCode){
+//        String isExistCourseCode = "SELECT COUNT(*) FROM enrolledCourses WHERE courseCode = ?";
+//        return isExistCourseCode;
+//    }
 
+    public int existsByCourseCode(String courseCode) {
+        String sqlStatement = "SELECT COUNT(*) FROM enrolledCourses WHERE courseCode = ?";
+        int result = jdbcTemplate.queryForObject(sqlStatement, new Object[]{courseCode}, Integer.class);
+        System.out.println(result);
+        return result;
+    }
 }

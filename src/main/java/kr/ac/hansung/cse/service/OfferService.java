@@ -25,4 +25,8 @@ public class OfferService {
         return offerDao.offerList();
     }
 
+    public int existsByCourseCode(String courseCode){
+        return offerDao.existsByCourseCode(courseCode);
+    }
+
 }

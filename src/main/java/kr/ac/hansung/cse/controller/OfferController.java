@@ -109,7 +109,7 @@ public class OfferController {
 
     @PostMapping("/check") // 수강신청 성공 후
     public String check(Model model, @Valid Offer offer, BindingResult result) {
-        if(result.hasErrors()) {
+        if(result.hasErrors()) { // 유효성 검사
             System.out.println("== Form data does not validated ==");
 
             List<ObjectError> errors = result.getAllErrors();
@@ -119,6 +119,14 @@ public class OfferController {
             }
 
             model.addAttribute("offer", offer);
+            return "createoffer";
+        }
+        String courseCode = offer.getCourseCode(); // 입력 폼에서 courseCode 값을 가져옴
+        int alreadyExists = offerService.existsByCourseCode(courseCode); // db와 비교해서 이미 존재하면 alreadyExists 값은 1이 됨
+        if (alreadyExists != 0) { // 0이 아니라면 즉, 이미 존재한다면 에러 메시지 출력하는 로직
+            String errorMsg = "이미 해당 강의가 수강신청되었습니다.";
+            System.out.println(errorMsg);
+            model.addAttribute("errorMsg", errorMsg);
             return "createoffer";
         }
 

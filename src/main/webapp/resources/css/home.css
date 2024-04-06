@@ -42,9 +42,8 @@
     top: 0;
     background-image: url("../images/center-img.png");
     background-size: cover;
-
-
 }
+
 .right-img {
     position: absolute;
     width: 300px;
@@ -68,9 +67,8 @@
     line-height: 36px;
     text-align: center;
     color: #000000;
-
-
 }
+
 .center-text {
     position: absolute;
     width: 187px;
