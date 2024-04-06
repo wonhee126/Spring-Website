@@ -61,7 +61,7 @@ public class OfferController {
     }
 
     @GetMapping("/createoffer") // 수강신청 하기
-    public String createOffer(@ModelAttribute @Validated Offer offer, BindingResult result) {
+    public String createOffer(@ModelAttribute @Validated Offer offer, BindingResult result, Model model) {
         if (result.hasErrors()) {
             System.out.println("== Form data does not validate ==");
 
@@ -72,6 +72,12 @@ public class OfferController {
 
             return "createoffer";
         }
+        // username을 출력하기 위한 코드
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        model.addAttribute("username", username);
+
+        offer.setUsername(username);
 
         return "createoffer";
     }
@@ -103,6 +109,13 @@ public class OfferController {
     public String showOffers3(Model model, Offer offer) {
         List<Offer> offerList = offerService.offerList();
         model.addAttribute("offerList", offerList);
+
+        // username을 출력하기 위한 코드
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        model.addAttribute("username", username);
+
+        offer.setUsername(username);
 
         return "enrolledCourses";
     }

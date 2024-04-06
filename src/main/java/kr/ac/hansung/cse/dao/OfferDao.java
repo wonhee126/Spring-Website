@@ -91,22 +91,14 @@ public class OfferDao {
             }
         });
     }
-
-    //crud method
     public boolean delete(int id) { //삭제(D)
         String sqlStatement= "delete from offers where id=?";
         return (jdbcTemplate.update(sqlStatement, new Object[] {id}) == 1);
     }
-//
-//    public String getCourseCode(String courseCode){
-//        String isExistCourseCode = "SELECT COUNT(*) FROM enrolledCourses WHERE courseCode = ?";
-//        return isExistCourseCode;
-//    }
-
-    public int existsByCourseCode(String courseCode) {
+    public int existsByCourseCode(String courseCode) { //courseCode 중복 금지 검사 코드
         String sqlStatement = "SELECT COUNT(*) FROM enrolledCourses WHERE courseCode = ?";
         int result = jdbcTemplate.queryForObject(sqlStatement, new Object[]{courseCode}, Integer.class);
-        System.out.println(result);
+        System.out.println(result); // db에 존재하면 result는 1이 됨
         return result;
     }
 }

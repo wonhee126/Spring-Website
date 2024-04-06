@@ -17,11 +17,9 @@ public class Offer {
     private String username;
     private int id;
 
-//    @Size(min=4, max=4,message="year must be 4 chars")
     @Pattern(regexp="[0-9]{4}", message="year must be 4 digits")
     private String year;
 
-//    @Size(min=1, max=1,message="year must be 1 chars")
     @Pattern(regexp="[1~2]{1}", message="semester must be 1 digit between 1 and 2")
     private String semester;
 
@@ -37,7 +35,6 @@ public class Offer {
     @Size(min=2, max=10, message = "professor must be between 2 and 10 chars")
     private String professor;
 
-//    @Size(min=1, max=10, message = "credit must be between 1 and 10 chars")
     @Pattern(regexp="[1-9]{1,2}", message="credit must be between 1 and 10 digits")
     private String credit;
 }

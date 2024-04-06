@@ -39,6 +39,10 @@
         </div>
     </div>
 </div>
+
+<%--로그인한 유저 이름의 수강신청 출력 --%>
+<div class="username">${username}님의 수강신청</div>
+
 <sf:form method="post" action="${pageContext.request.contextPath}/check" modelAttribute="offer">
         <table class="formtable">
             <tr>

@@ -81,6 +81,6 @@
 
     document.getElementById("main-link").onclick = function () {
         window.location.href = "${pageContext.request.contextPath}/";
-    };
+    }; // 클릭 시 홈 화면으로 이동
 </script>
 </html>

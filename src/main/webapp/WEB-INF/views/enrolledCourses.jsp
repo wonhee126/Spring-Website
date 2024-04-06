@@ -30,6 +30,9 @@
     </div>
 </div>
 
+<%--로그인한 유저 이름의 수강신청 조회 출력 --%>
+<div class="username">${username}님의 수강신청 조회</div>
+
 <table border="1" class="offerTable">
     <thead>
     <tr class="oc-thead-tr">
