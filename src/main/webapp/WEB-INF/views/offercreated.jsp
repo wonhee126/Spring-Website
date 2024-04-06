@@ -37,12 +37,13 @@
     </div>
 </div>
 
+<%--클릭한 년도와 학기 정보 출력--%>
 <div class="description">${year}년 ${semester}학기 상세보기</div>
 
 <table border="1" class="offerTable">
     <thead>
     <tr class="oc-thead-tr">
-        <th class="oc-th">수강년도</th>
+        <th class="th">수강년도</th>
         <th class="th">학기</th>
         <th class="th">교과코드</th>
         <th class="th">교과명</th>
@@ -54,7 +55,7 @@
     <tbody class="oc-tbody">
     <c:forEach var="offer" items="${offers}">
         <tr>
-            <td class="oc-tbody-td"><c:out value="${offer.year}" /></td>
+            <td class="tbody-td"><c:out value="${offer.year}" /></td>
             <td class="tbody-td"><c:out value="${offer.semester}" /></td>
             <td class="tbody-td"><c:out value="${offer.courseCode}" /></td>
             <td class="tbody-td"><c:out value="${offer.courseName}" /></td>
@@ -73,7 +74,7 @@
 <script>
     document.getElementById("main-link").onclick = function() {
         window.location.href = "${pageContext.request.contextPath}/";
-    };
+    }; // 클릭 시 홈 화면으로 이동
 </script>
 </html>
 

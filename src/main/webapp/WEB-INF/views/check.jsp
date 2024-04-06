@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>HSU 학사 정보 시스템</title>
+    <title>HSU 학사 정보 시스템-수강신청 성공</title>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/css/check.css" >
     <link rel="stylesheet" type="text/css"
@@ -41,6 +41,7 @@
 <div class="rectangle-17-2"></div>
 <div class="success-message">수강 신청 성공</div>
 <div class="rectangle-17"></div>
+
 <a href="${pageContext.request.contextPath}/enrolledCourses">
     <div class="request-link-text">수강신청 조회 바로가기</div>
 </a>
@@ -51,6 +52,6 @@
 <script>
     document.getElementById("main-link").onclick = function() {
         window.location.href = "${pageContext.request.contextPath}/";
-    };
+    }; // 클릭 시 홈 화면으로 이동
 </script>
 </html>

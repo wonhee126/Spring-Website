@@ -30,6 +30,7 @@
     </div>
 </div>
 
+<%--로그인한 유저 이름의 학년별 이수 학점 조회 출력 --%>
 <div class="username">${username}님의 학년별 이수 학점 조회</div>
 
 <table border="1" class="offerTable">

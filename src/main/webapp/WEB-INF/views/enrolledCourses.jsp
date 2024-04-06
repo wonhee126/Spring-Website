@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>HSU 학사 정보 시스템-학년별 이수 학점 조회</title>
+    <title>HSU 학사 정보 시스템-수강신청 조회</title>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/css/menubar.css" >
     <link rel="stylesheet" type="text/css"
@@ -66,6 +66,6 @@
 <script>
     document.getElementById("main-link").onclick = function() {
         window.location.href = "${pageContext.request.contextPath}/";
-    };
+    }; // 클릭 시 홈 화면으로 이동
 </script>
 </html>

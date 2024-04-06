@@ -11,7 +11,7 @@
 
 <html>
 <head>
-    <title>HSU 학사 정보 시스템-수강신청 하기</title>
+    <title>HSU 학사 정보 시스템-수강신청</title>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/css/main.css" >
     <link rel="stylesheet" type="text/css"
@@ -91,6 +91,7 @@
         </table>
         </sf:form>
 
+<%-- 동일한 courseCode가 db에 입력되지 않도록 하기 위한 에러 메시지 출력--%>
 <c:if test="${not empty errorMsg}">
     <div class="existError">${errorMsg}</div>
 </c:if>
@@ -101,6 +102,7 @@
 </body>
 <script>
     document.getElementById("main-link").onclick = function() {
-        window.location.href = "${pageContext.request.contextPath}/"; };
+        window.location.href = "${pageContext.request.contextPath}/";
+    }; // 클릭 시 홈 화면으로 이동
 </script>
 </html>
