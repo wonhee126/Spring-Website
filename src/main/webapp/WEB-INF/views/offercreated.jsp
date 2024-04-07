@@ -43,25 +43,26 @@
 <table border="1" class="offerTable">
     <thead>
     <tr class="oc-thead-tr">
-        <th class="th">수강년도</th>
-        <th class="th">학기</th>
-        <th class="th">교과코드</th>
-        <th class="th">교과명</th>
-        <th class="th">교과구분</th>
-        <th class="th">교수</th>
-        <th class="th">학점</th>
+        <th>수강년도</th>
+        <th>학기</th>
+        <th>교과코드</th>
+        <th>교과명</th>
+        <th>교과구분</th>
+        <th>교수</th>
+        <th>학점</th>
     </tr>
     </thead>
-    <tbody class="oc-tbody">
+    <tbody>
+
     <c:forEach var="offer" items="${offers}">
         <tr>
-            <td class="tbody-td"><c:out value="${offer.year}" /></td>
-            <td class="tbody-td"><c:out value="${offer.semester}" /></td>
-            <td class="tbody-td"><c:out value="${offer.courseCode}" /></td>
-            <td class="tbody-td"><c:out value="${offer.courseName}" /></td>
-            <td class="tbody-td"><c:out value="${offer.courseType}" /></td>
-            <td class="tbody-td"><c:out value="${offer.professor}" /></td>
-            <td class="tbody-td"><c:out value="${offer.credit}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offer.year}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offer.semester}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offer.courseCode}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offer.courseName}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offer.courseType}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offer.professor}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offer.credit}" /></td>
         </tr>
     </c:forEach>
 

@@ -36,10 +36,10 @@
 <table border="1" class="offerTable">
     <thead>
     <tr class="thead-tr">
-        <th class="th">수강년도</th>
-        <th class="th">학기</th>
-        <th class="th">취득 학점</th>
-        <th class="th">상세보기</th>
+        <th>수강년도</th>
+        <th>학기</th>
+        <th>취득 학점</th>
+        <th>상세보기</th>
     </tr>
     </thead>
     <tbody>
@@ -47,7 +47,7 @@
     <c:set var="totalCredits" value="0" />
     <c:forEach var="year" items="${year_semester_map}">
         <c:forEach var="semester_entry" items="${year.value}">
-            <tr class="content">
+            <tr>
                 <td class="tbody-td"><c:out value="${year.key}" /></td>
                 <td class="tbody-td"><c:out value="${semester_entry.key}" /></td>
                 <td class="tbody-td"><c:out value="${semester_entry.value}" /></td>
@@ -58,9 +58,9 @@
             </tr>
         </c:forEach>
     </c:forEach>
-    <tr class="tbody-tr">
-        <td colspan="2" class="td">총계</td>
-        <td class="td"><c:out value="${totalCredits}" /></td>
+    <tr class="tfoot">
+        <td colspan="2">총계</td>
+        <td><c:out value="${totalCredits}" /></td>
         <td></td>
     </tr>
     </tbody>
