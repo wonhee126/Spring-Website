@@ -40,6 +40,7 @@
 <table border="1" class="offerTable">
     <thead>
     <tr class="thead-tr">
+        <th class="oc-th">번호</th>
         <th class="oc-th">수강년도</th>
         <th class="oc-th">학기</th>
         <th class="oc-th">교과코드</th>
@@ -50,8 +51,9 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="offerList" items="${offerList}">
+    <c:forEach var="offerList" items="${offerList}" varStatus="status">
         <tr>
+            <td class="oc-tbody-td"><c:out value="${status.index+1}" /></td>
             <td class="oc-tbody-td"><c:out value="${offerList.year}" /></td>
             <td class="oc-tbody-td"><c:out value="${offerList.semester}" /></td>
             <td class="oc-tbody-td" onclick="deleteOffer('<c:out value="${offerList.courseCode}" />')">

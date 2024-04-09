@@ -77,7 +77,6 @@ public class OfferDao {
 
                 Offer offer= new Offer();
 
-                //offer.setId(rs.getInt("id"));
                 offer.setYear(rs.getString("year"));
                 offer.setSemester(rs.getString("semester"));
                 offer.setCourseCode(rs.getString("courseCode"));
@@ -92,7 +91,7 @@ public class OfferDao {
         });
     }
     public boolean delete(String courseCode) { //삭제(D)
-        String sqlStatement= "delete from enrolledCourses where courseCode=?";
+        String sqlStatement= "delete from enrolledCourses where courseCode=?"; // pk가 courseCode이므로 코드 수정
         return (jdbcTemplate.update(sqlStatement, new Object[] {courseCode}) == 1);
     }
 
