@@ -46,3 +46,15 @@
     text-align: center;
     color: #2B2F5C;
 }
+
+.error-msg{
+    color: red;
+        position: absolute;
+        width: 500px;
+        height: 36px;
+        left: 19px;
+        top: 160px;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 20px;
+}

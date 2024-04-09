@@ -33,10 +33,13 @@
 <%--로그인한 유저 이름의 수강신청 조회 출력 --%>
 <div class="username">${username}님의 수강신청 조회</div>
 
+<c:if test="${not empty errorMsg}">
+    <div class="error-msg">${errorMsg}</div>
+</c:if>
+
 <table border="1" class="offerTable">
     <thead>
     <tr class="thead-tr">
-        <th class="oc-th">번호</th>
         <th class="oc-th">수강년도</th>
         <th class="oc-th">학기</th>
         <th class="oc-th">교과코드</th>
@@ -46,14 +49,14 @@
         <th class="oc-th">학점</th>
     </tr>
     </thead>
-<%--    <tbody class="oc-tbody">--%>
     <tbody>
     <c:forEach var="offerList" items="${offerList}">
         <tr>
-            <td class="oc-tbody-td"><c:out value="${offerList.id}" /></td>
             <td class="oc-tbody-td"><c:out value="${offerList.year}" /></td>
             <td class="oc-tbody-td"><c:out value="${offerList.semester}" /></td>
-            <td class="oc-tbody-td"><c:out value="${offerList.courseCode}" /></td>
+            <td class="oc-tbody-td" onclick="deleteOffer('<c:out value="${offerList.courseCode}" />')">
+                <c:out value="${offerList.courseCode}" />
+            </td>
             <td class="oc-tbody-td"><c:out value="${offerList.courseName}" /></td>
             <td class="oc-tbody-td"><c:out value="${offerList.courseType}" /></td>
             <td class="oc-tbody-td"><c:out value="${offerList.professor}" /></td>
@@ -71,5 +74,10 @@
     document.getElementById("main-link").onclick = function() {
         window.location.href = "${pageContext.request.contextPath}/";
     }; // 클릭 시 홈 화면으로 이동
+    function deleteOffer(courseCode) {
+        if (confirm("삭제하시겠습니까?")) {
+            window.location.href = "${pageContext.request.contextPath}/delete?courseCode=" + courseCode;
+        }
+    }
 </script>
 </html>

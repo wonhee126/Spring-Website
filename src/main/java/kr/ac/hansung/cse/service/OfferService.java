@@ -29,4 +29,6 @@ public class OfferService {
         return offerDao.existsByCourseCode(courseCode);
     }
 
+    public boolean delete(String courseCode){ return offerDao.delete(courseCode); }
+
 }

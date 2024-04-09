@@ -77,7 +77,7 @@ public class OfferDao {
 
                 Offer offer= new Offer();
 
-                offer.setId(rs.getInt("id"));
+                //offer.setId(rs.getInt("id"));
                 offer.setYear(rs.getString("year"));
                 offer.setSemester(rs.getString("semester"));
                 offer.setCourseCode(rs.getString("courseCode"));
@@ -91,9 +91,9 @@ public class OfferDao {
             }
         });
     }
-    public boolean delete(int id) { //삭제(D)
-        String sqlStatement= "delete from offers where id=?";
-        return (jdbcTemplate.update(sqlStatement, new Object[] {id}) == 1);
+    public boolean delete(String courseCode) { //삭제(D)
+        String sqlStatement= "delete from enrolledCourses where courseCode=?";
+        return (jdbcTemplate.update(sqlStatement, new Object[] {courseCode}) == 1);
     }
 
     public int existsByCourseCode(String courseCode) { //courseCode 중복 금지 검사 코드

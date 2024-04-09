@@ -10,10 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.*;
@@ -27,19 +24,19 @@ public class OfferController {
     public String showOffers(Model model) {
 
         List<Offer> offers = offerService.getOffers();
-        Map<String, Map<String, Integer>> yearSemesterMap = new HashMap<>();
+        Map<String, Map<String, Integer>> year_Semester_Map = new HashMap<>();
 
         for (Offer offer : offers) {
             String year = offer.getYear();
             String semester = offer.getSemester();
-            String creditString = offer.getCredit();
-            int credit = Integer.parseInt(creditString);
+            //String creditString = offer.getCredit();
+            int credit = Integer.parseInt(offer.getCredit());
 
-            if (!yearSemesterMap.containsKey(year)) {
-                yearSemesterMap.put(year, new HashMap<>());
+            if (!year_Semester_Map.containsKey(year)) {
+                year_Semester_Map.put(year, new HashMap<>());
             }
 
-            Map<String, Integer> semesterMap = yearSemesterMap.get(year);
+            Map<String, Integer> semesterMap = year_Semester_Map.get(year);
             if (semesterMap.containsKey(semester)) {
                 int totalCredit = semesterMap.get(semester);
                 semesterMap.put(semester, totalCredit + credit);
@@ -48,7 +45,7 @@ public class OfferController {
             }
         }
 
-        model.addAttribute("year_semester_map", yearSemesterMap);
+        model.addAttribute("year_semester_map", year_Semester_Map);
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
@@ -107,7 +104,6 @@ public class OfferController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         model.addAttribute("username", username);
-
         offer.setUsername(username);
 
         return "enrolledCourses";
@@ -140,4 +136,18 @@ public class OfferController {
 
         return "check";
     }
+
+    @GetMapping("/delete") // 수강신청 조회-삭제하기
+    public String deleteOffer(@RequestParam("courseCode") String courseCode,Model model) {
+            offerService.delete(courseCode);
+            List<Offer> offerList = offerService.offerList();
+            model.addAttribute("offerList", offerService.offerList());
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String username = authentication.getName();
+            model.addAttribute("username", username);
+
+            return "enrolledCourses";
+    }
 }
+
