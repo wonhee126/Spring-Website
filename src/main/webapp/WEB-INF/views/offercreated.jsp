@@ -43,6 +43,7 @@
 <table border="1" class="offerTable">
     <thead>
     <tr class="oc-thead-tr">
+        <th class="oc-th">번호</th>
         <th class="oc-th">수강년도</th>
         <th class="oc-th">학기</th>
         <th class="oc-th">교과코드</th>
@@ -53,8 +54,9 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="offer" items="${offers}">
+    <c:forEach var="offer" items="${offers}" varStatus="status">
         <tr>
+            <td class="oc-tbody-td"><c:out value="${status.index + 1}" /></td>
             <td class="oc-tbody-td"><c:out value="${offer.year}" /></td>
             <td class="oc-tbody-td"><c:out value="${offer.semester}" /></td>
             <td class="oc-tbody-td"><c:out value="${offer.courseCode}" /></td>
@@ -64,6 +66,7 @@
             <td class="oc-tbody-td"><c:out value="${offer.credit}" /></td>
         </tr>
     </c:forEach>
+
 
     </tbody>
 </table>

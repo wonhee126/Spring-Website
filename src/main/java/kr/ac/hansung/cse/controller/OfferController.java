@@ -129,7 +129,7 @@ public class OfferController {
         }
         String courseCode = offer.getCourseCode(); // 입력 폼에서 courseCode 값을 가져옴
         int alreadyExists = offerService.existsByCourseCode(courseCode); // db와 비교해서 이미 존재하면 alreadyExists 값은 1이 됨
-        if (alreadyExists != 0) { // 0이 아니라면 즉, 이미 존재한다면 에러 메시지 출력하는 로직
+        if (alreadyExists != 0) { // 이미 존재한다면 에러 메시지 출력하는 로직
             String errorMsg = "이미 해당 강의가 수강신청되었습니다.";
             System.out.println(errorMsg);
             model.addAttribute("errorMsg", errorMsg);

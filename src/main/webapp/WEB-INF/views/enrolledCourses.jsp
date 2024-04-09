@@ -48,7 +48,7 @@
     </thead>
 <%--    <tbody class="oc-tbody">--%>
     <tbody>
-    <c:forEach var="offerList" items="${offerList}" varStatus="status">
+    <c:forEach var="offerList" items="${offerList}">
         <tr>
             <td class="oc-tbody-td"><c:out value="${offerList.id}" /></td>
             <td class="oc-tbody-td"><c:out value="${offerList.year}" /></td>
