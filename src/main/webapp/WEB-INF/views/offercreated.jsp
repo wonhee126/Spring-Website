@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: nykim
-  Date: 2024-03-11
-  Time: 오후 7:01
-  To change this template use File | Settings | File Templates.
---%>
+<%--offercreated.jsp--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -43,14 +37,14 @@
 <table border="1" class="offerTable">
     <thead>
     <tr class="oc-thead-tr">
-        <th class="oc-th">번호</th>
-        <th class="oc-th">수강년도</th>
-        <th class="oc-th">학기</th>
-        <th class="oc-th">교과코드</th>
-        <th class="oc-th">교과명</th>
-        <th class="oc-th">교과구분</th>
-        <th class="oc-th">교수</th>
-        <th class="oc-th">학점</th>
+        <th>번호</th>
+        <th>수강년도</th>
+        <th>학기</th>
+        <th>교과코드</th>
+        <th>교과명</th>
+        <th>교과구분</th>
+        <th>교수</th>
+        <th>학점</th>
     </tr>
     </thead>
     <tbody>

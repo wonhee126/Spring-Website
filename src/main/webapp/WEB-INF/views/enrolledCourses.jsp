@@ -1,3 +1,4 @@
+<%--enrolledCourses.jsp--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -39,15 +40,15 @@
 
 <table border="1" class="offerTable">
     <thead>
-    <tr class="thead-tr">
-        <th class="oc-th">번호</th>
-        <th class="oc-th">수강년도</th>
-        <th class="oc-th">학기</th>
-        <th class="oc-th">교과코드</th>
-        <th class="oc-th">교과목명</th>
-        <th class="oc-th">교과구분</th>
-        <th class="oc-th">교수</th>
-        <th class="oc-th">학점</th>
+    <tr class="oc-thead-tr">
+        <th>번호</th>
+        <th>수강년도</th>
+        <th>학기</th>
+        <th>교과코드</th>
+        <th>교과목명</th>
+        <th>교과구분</th>
+        <th>교수</th>
+        <th>학점</th>
     </tr>
     </thead>
     <tbody>
@@ -76,6 +77,7 @@
     document.getElementById("main-link").onclick = function() {
         window.location.href = "${pageContext.request.contextPath}/";
     }; // 클릭 시 홈 화면으로 이동
+
     function deleteOffer(courseCode) {
         if (confirm("삭제하시겠습니까?")) {
             window.location.href = "${pageContext.request.contextPath}/delete?courseCode=" + courseCode;

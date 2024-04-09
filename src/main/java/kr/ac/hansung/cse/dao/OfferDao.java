@@ -1,3 +1,4 @@
+// OfferDao.java
 package kr.ac.hansung.cse.dao;
 
 import kr.ac.hansung.cse.model.Offer;

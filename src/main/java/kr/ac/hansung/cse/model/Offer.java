@@ -1,3 +1,4 @@
+// Offer.java
 package kr.ac.hansung.cse.model;
 
 import lombok.Getter;
