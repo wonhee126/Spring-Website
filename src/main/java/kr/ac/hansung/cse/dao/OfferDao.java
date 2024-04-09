@@ -77,7 +77,7 @@ public class OfferDao {
 
                 Offer offer= new Offer();
 
-                //offer.setId(rs.getInt("id"));
+                offer.setId(rs.getInt("id"));
                 offer.setYear(rs.getString("year"));
                 offer.setSemester(rs.getString("semester"));
                 offer.setCourseCode(rs.getString("courseCode"));
@@ -95,6 +95,7 @@ public class OfferDao {
         String sqlStatement= "delete from offers where id=?";
         return (jdbcTemplate.update(sqlStatement, new Object[] {id}) == 1);
     }
+
     public int existsByCourseCode(String courseCode) { //courseCode 중복 금지 검사 코드
         String sqlStatement = "SELECT COUNT(*) FROM enrolledCourses WHERE courseCode = ?";
         int result = jdbcTemplate.queryForObject(sqlStatement, new Object[]{courseCode}, Integer.class);

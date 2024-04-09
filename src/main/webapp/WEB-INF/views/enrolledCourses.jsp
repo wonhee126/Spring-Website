@@ -47,10 +47,10 @@
     </tr>
     </thead>
 <%--    <tbody class="oc-tbody">--%>
-    <tbody class="oc-tbody">
+    <tbody>
     <c:forEach var="offerList" items="${offerList}" varStatus="status">
         <tr>
-            <td class="oc-tbody-td"><c:out value="${status.index + 1}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offerList.id}" /></td>
             <td class="oc-tbody-td"><c:out value="${offerList.year}" /></td>
             <td class="oc-tbody-td"><c:out value="${offerList.semester}" /></td>
             <td class="oc-tbody-td"><c:out value="${offerList.courseCode}" /></td>
