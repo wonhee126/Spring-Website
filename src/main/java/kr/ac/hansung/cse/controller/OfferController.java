@@ -29,7 +29,6 @@ public class OfferController {
         for (Offer offer : offers) {
             String year = offer.getYear();
             String semester = offer.getSemester();
-            //String creditString = offer.getCredit();
             int credit = Integer.parseInt(offer.getCredit());
 
             if (!year_Semester_Map.containsKey(year)) {
@@ -80,16 +79,16 @@ public class OfferController {
 
         List<Offer> allOffers = offerService.getOffers(); // 모든 데이터 조회
 
-        List<Offer> filteredOffers = new ArrayList<>(); // (year, semester)에 해당하는 데이터만 담을 리스트 생성
+        List<Offer> year_semester_offerList = new ArrayList<>(); // (year, semester)에 해당하는 데이터만 담을 리스트 생성
         for (Offer offer : allOffers) {
             if (offer.getYear().equals(year) && offer.getSemester().equals(semester)) { // 해당 학년도와 학기에 해당하는 데이터일 경우
-                filteredOffers.add(offer); // 리스트에 추가
+                year_semester_offerList.add(offer); // 리스트에 추가
             }
         }
 
         model.addAttribute("year", year);
         model.addAttribute("semester", semester);
-        model.addAttribute("offers", filteredOffers);
+        model.addAttribute("offers", year_semester_offerList);
 
         return "offercreated";
     }
