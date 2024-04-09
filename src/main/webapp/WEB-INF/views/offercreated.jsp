@@ -43,17 +43,16 @@
 <table border="1" class="offerTable">
     <thead>
     <tr class="oc-thead-tr">
-        <th>수강년도</th>
-        <th>학기</th>
-        <th>교과코드</th>
-        <th>교과명</th>
-        <th>교과구분</th>
-        <th>교수</th>
-        <th>학점</th>
+        <th class="oc-th">수강년도</th>
+        <th class="oc-th">학기</th>
+        <th class="oc-th">교과코드</th>
+        <th class="oc-th">교과명</th>
+        <th class="oc-th">교과구분</th>
+        <th class="oc-th">교수</th>
+        <th class="oc-th">학점</th>
     </tr>
     </thead>
     <tbody>
-
     <c:forEach var="offer" items="${offers}">
         <tr>
             <td class="oc-tbody-td"><c:out value="${offer.year}" /></td>
@@ -78,4 +77,3 @@
     }; // 클릭 시 홈 화면으로 이동
 </script>
 </html>
-

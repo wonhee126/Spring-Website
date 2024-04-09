@@ -35,28 +35,29 @@
 
 <table border="1" class="offerTable">
     <thead>
-    <tr class="oc-thead-tr">
-        <th class="th">번호</th>
-        <th class="th">수강년도</th>
-        <th class="th">학기</th>
-        <th class="th">교과코드</th>
-        <th class="th">교과목명</th>
-        <th class="th">교과구분</th>
-        <th class="th">교수</th>
-        <th class="th">학점</th>
+    <tr class="thead-tr">
+        <th class="oc-th">번호</th>
+        <th class="oc-th">수강년도</th>
+        <th class="oc-th">학기</th>
+        <th class="oc-th">교과코드</th>
+        <th class="oc-th">교과목명</th>
+        <th class="oc-th">교과구분</th>
+        <th class="oc-th">교수</th>
+        <th class="oc-th">학점</th>
     </tr>
     </thead>
+<%--    <tbody class="oc-tbody">--%>
     <tbody class="oc-tbody">
     <c:forEach var="offerList" items="${offerList}" varStatus="status">
         <tr>
-            <td class="tbody-td"><c:out value="${status.index + 1}" /></td>
-            <td class="tbody-td"><c:out value="${offerList.year}" /></td>
-            <td class="tbody-td"><c:out value="${offerList.semester}" /></td>
-            <td class="tbody-td"><c:out value="${offerList.courseCode}" /></td>
-            <td class="tbody-td"><c:out value="${offerList.courseName}" /></td>
-            <td class="tbody-td"><c:out value="${offerList.courseType}" /></td>
-            <td class="tbody-td"><c:out value="${offerList.professor}" /></td>
-            <td class="tbody-td"><c:out value="${offerList.credit}" /></td>
+            <td class="oc-tbody-td"><c:out value="${status.index + 1}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offerList.year}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offerList.semester}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offerList.courseCode}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offerList.courseName}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offerList.courseType}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offerList.professor}" /></td>
+            <td class="oc-tbody-td"><c:out value="${offerList.credit}" /></td>
         </tr>
     </c:forEach>
     </tbody>
