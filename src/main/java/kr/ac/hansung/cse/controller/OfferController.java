@@ -25,17 +25,19 @@ public class OfferController {
     public String showOffers(Model model) {
 
         List<Offer> offers = offerService.getOffers();
-        Map<String, Map<String, Integer>> year_Semester_Map = new HashMap<>();
+        Map<String, Map<String, Integer>> year_Semester_Map = new HashMap<>(); // 학년별 이수 학점을 저장할 해시맵
 
         for (Offer offer : offers) {
             String year = offer.getYear();
             String semester = offer.getSemester();
             int credit = Integer.parseInt(offer.getCredit());
 
+            // 수강년도가 Map에 존재하지 않으면
             if (!year_Semester_Map.containsKey(year)) {
                 year_Semester_Map.put(year, new HashMap<>());
             }
 
+            // 해당 수강년도와 학기에 대한 이수 학점 정보
             Map<String, Integer> semesterMap = year_Semester_Map.get(year);
             if (semesterMap.containsKey(semester)) {
                 int totalCredit = semesterMap.get(semester);
@@ -47,6 +49,7 @@ public class OfferController {
 
         model.addAttribute("year_semester_map", year_Semester_Map);
 
+        // username을 출력하기 위한 코드
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         model.addAttribute("username", username);
@@ -143,6 +146,7 @@ public class OfferController {
             List<Offer> offerList = offerService.offerList();
             model.addAttribute("offerList", offerService.offerList());
 
+            // username을 출력하기 위한 코드
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             String username = authentication.getName();
             model.addAttribute("username", username);
